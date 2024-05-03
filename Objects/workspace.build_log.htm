@@ -1,0 +1,382 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mark Bassem, HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  D:\programs\Keil5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\kolleya\spring 24\2-RTOS\Mark Labs\Lab 6\workspace.uvprojx
+Project File Date:  03/18/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\programs\Keil5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_TM4C123.s...
+compiling freertos_evr.c...
+compiling main.c...
+compiling port.c...
+compiling list.c...
+compiling system_TM4C123.c...
+DIO.c(2): warning: In file included from...
+./std_types.h(17): warning: redefinition of typedef 'int8' is a C11 feature [-Wtypedef-redefinition]
+   17 | typedef signed char int8;
+      |                     ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(17): note: unguarded header; consider using #ifdef guards or #pragma once
+   17 | typedef signed char int8;
+      |                     ^
+DIO.c(2): warning: In file included from...
+./std_types.h(18): warning: redefinition of typedef 'uint8' is a C11 feature [-Wtypedef-redefinition]
+   18 | typedef unsigned char uint8;
+      |                       ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(18): note: unguarded header; consider using #ifdef guards or #pragma once
+   18 | typedef unsigned char uint8;
+      |                       ^
+DIO.c(2): warning: In file included from...
+./std_types.h(19): warning: redefinition of typedef 'uint64' is a C11 feature [-Wtypedef-redefinition]
+   19 | typedef unsigned long long uint64;
+      |                            ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(19): note: unguarded header; consider using #ifdef guards or #pragma once
+   19 | typedef unsigned long long uint64;
+      |                            ^
+DIO.c(2): warning: In file included from...
+./std_types.h(20): warning: redefinition of typedef 'int64' is a C11 feature [-Wtypedef-redefinition]
+   20 | typedef  long long int64;
+      |                    ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(20): note: unguarded header; consider using #ifdef guards or #pragma once
+   20 | typedef  long long int64;
+      |                    ^
+DIO.c(2): warning: In file included from...
+./std_types.h(22): warning: redefinition of typedef 'float32' is a C11 feature [-Wtypedef-redefinition]
+   22 | typedef  float float32;
+      |                ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(22): note: unguarded header; consider using #ifdef guards or #pragma once
+   22 | typedef  float float32;
+      |                ^
+DIO.c(2): warning: In file included from...
+./std_types.h(24): warning: redefinition of typedef 'sdouble64' is a C11 feature [-Wtypedef-redefinition]
+   24 | typedef  double sdouble64;
+      |                 ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(24): note: unguarded header; consider using #ifdef guards or #pragma once
+   24 | typedef  double sdouble64;
+      |                 ^
+DIO.c(2): warning: In file included from...
+./std_types.h(25): warning: redefinition of typedef 'int16' is a C11 feature [-Wtypedef-redefinition]
+   25 | typedef short int16;
+      |               ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(25): note: unguarded header; consider using #ifdef guards or #pragma once
+   25 | typedef short int16;
+      |               ^
+DIO.c(2): warning: In file included from...
+./std_types.h(26): warning: redefinition of typedef 'uint16' is a C11 feature [-Wtypedef-redefinition]
+   26 | typedef unsigned short uint16;
+      |                        ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(26): note: unguarded header; consider using #ifdef guards or #pragma once
+   26 | typedef unsigned short uint16;
+      |                        ^
+DIO.c(2): warning: In file included from...
+./std_types.h(27): warning: redefinition of typedef 'int32' is a C11 feature [-Wtypedef-redefinition]
+   27 | typedef int int32;
+      |             ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(27): note: unguarded header; consider using #ifdef guards or #pragma once
+   27 | typedef int int32;
+      |             ^
+DIO.c(2): warning: In file included from...
+./std_types.h(28): warning: redefinition of typedef 'uint32' is a C11 feature [-Wtypedef-redefinition]
+   28 | typedef unsigned int uint32;
+      |                      ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(28): note: unguarded header; consider using #ifdef guards or #pragma once
+   28 | typedef unsigned int uint32;
+      |                      ^
+DIO.c(2): warning: In file included from...
+./std_types.h(29): warning: redefinition of typedef 'int8_ptr' is a C11 feature [-Wtypedef-redefinition]
+   29 | typedef signed char* int8_ptr;
+      |                      ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(29): note: unguarded header; consider using #ifdef guards or #pragma once
+   29 | typedef signed char* int8_ptr;
+      |                      ^
+DIO.c(2): warning: In file included from...
+./std_types.h(30): warning: redefinition of typedef 'uint8_ptr' is a C11 feature [-Wtypedef-redefinition]
+   30 | typedef unsigned char* uint8_ptr;
+      |                        ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(30): note: unguarded header; consider using #ifdef guards or #pragma once
+   30 | typedef unsigned char* uint8_ptr;
+      |                        ^
+DIO.c(2): warning: In file included from...
+./std_types.h(31): warning: redefinition of typedef 'int16_ptr' is a C11 feature [-Wtypedef-redefinition]
+   31 | typedef short* int16_ptr;
+      |                ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(31): note: unguarded header; consider using #ifdef guards or #pragma once
+   31 | typedef short* int16_ptr;
+      |                ^
+DIO.c(2): warning: In file included from...
+./std_types.h(32): warning: redefinition of typedef 'uint16_ptr' is a C11 feature [-Wtypedef-redefinition]
+   32 | typedef unsigned short* uint16_ptr;
+      |                         ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(32): note: unguarded header; consider using #ifdef guards or #pragma once
+   32 | typedef unsigned short* uint16_ptr;
+      |                         ^
+DIO.c(2): warning: In file included from...
+./std_types.h(33): warning: redefinition of typedef 'int32_ptr' is a C11 feature [-Wtypedef-redefinition]
+   33 | typedef int* int32_ptr;
+      |              ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(33): note: unguarded header; consider using #ifdef guards or #pragma once
+   33 | typedef int* int32_ptr;
+      |              ^
+DIO.c(2): warning: In file included from...
+./std_types.h(34): warning: redefinition of typedef 'uint32_ptr' is a C11 feature [-Wtypedef-redefinition]
+   34 | typedef unsigned int* uint32_ptr;
+      |                       ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(34): note: unguarded header; consider using #ifdef guards or #pragma once
+   34 | typedef unsigned int* uint32_ptr;
+      |                       ^
+DIO.c(2): warning: In file included from...
+./std_types.h(36): warning: redefinition of typedef 'uint64_ptr' is a C11 feature [-Wtypedef-redefinition]
+   36 | typedef unsigned long long* uint64_ptr;
+      |                             ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(36): note: unguarded header; consider using #ifdef guards or #pragma once
+   36 | typedef unsigned long long* uint64_ptr;
+      |                             ^
+DIO.c(2): warning: In file included from...
+./std_types.h(37): warning: redefinition of typedef 'int64_ptr' is a C11 feature [-Wtypedef-redefinition]
+   37 | typedef  long long* int64_ptr;
+      |                     ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(37): note: unguarded header; consider using #ifdef guards or #pragma once
+   37 | typedef  long long* int64_ptr;
+      |                     ^
+DIO.c(2): warning: In file included from...
+./std_types.h(39): warning: redefinition of typedef 'float32_ptr' is a C11 feature [-Wtypedef-redefinition]
+   39 | typedef  float* float32_ptr;
+      |                 ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(39): note: unguarded header; consider using #ifdef guards or #pragma once
+   39 | typedef  float* float32_ptr;
+      |                 ^
+DIO.c(2): warning: In file included from...
+./std_types.h(41): warning: redefinition of typedef 'sdouble64_ptr' is a C11 feature [-Wtypedef-redefinition]
+   41 | typedef  double* sdouble64_ptr;
+      |                  ^
+./DIO.h(4): note: './std_types.h' included multiple times, additional include site here
+    4 | #include "std_types.h"
+      |          ^
+DIO.c(2): note: './std_types.h' included multiple times, additional include site here
+    2 | #include "std_types.h"
+      |          ^
+./std_types.h(41): note: unguarded header; consider using #ifdef guards or #pragma once
+   41 | typedef  double* sdouble64_ptr;
+      |                  ^
+DIO.c(13): warning: & has lower precedence than ==; == will be evaluated first [-Wparentheses]
+   13 |     while (READ_BIT(SYSCTL_PRGPIO_R, port_name) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./std_types.h(4): note: expanded from macro 'READ_BIT'
+    4 | #define READ_BIT(REG, BIT_POSN)   (REG>>BIT_POSN) & 1
+      |                                                   ^
+DIO.c(13): note: place parentheses around the '==' expression to silence this warning
+   13 |     while (READ_BIT(SYSCTL_PRGPIO_R, port_name) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./std_types.h(4): note: expanded from macro 'READ_BIT'
+    4 | #define READ_BIT(REG, BIT_POSN)   (REG>>BIT_POSN) & 1
+      |                                                   ^
+DIO.c(13): note: place parentheses around the & expression to evaluate it first
+   13 |     while (READ_BIT(SYSCTL_PRGPIO_R, port_name) == 0)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./std_types.h(4): note: expanded from macro 'READ_BIT'
+    4 | #define READ_BIT(REG, BIT_POSN)   (REG>>BIT_POSN) & 1
+      |                                   ~~~~~~~~~~~~~~~~^~~
+21 warnings generated.
+compiling DIO.c...
+compiling heap_1.c...
+compiling queue.c...
+compiling tasks.c...
+linking...
+Program Size: Code=7188 RO-data=656 RW-data=8 ZI-data=5000  
+".\Objects\workspace.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS-FreeRTOS.10.5.1.pack
+                ARM::CMSIS-FreeRTOS@10.5.1
+                Bundle of FreeRTOS for Cortex-M and Cortex-A
+   * Component: Config Variant: FreeRTOS Version: 10.5.1
+   * Component: Core Variant: Cortex-M Version: 10.5.1
+   * Component: Heap Variant: Heap_1 Version: 10.5.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/RTOS
+  ./RTE/_Target_1
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/CMSIS/RTOS2/FreeRTOS/Include
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: ARM::RTOS&FreeRTOS:Config&FreeRTOS@10.5.1
+      Include file:  Config/ARMCM/FreeRTOSConfig.h
+
+   * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@10.5.1
+      Include file:  Source/include/FreeRTOS.h
+      Include file:  Source/include/queue.h
+      Include file:  Source/include/semphr.h
+      Include file:  Source/include/task.h
+      Source file:   Source/queue.c
+      Source file:   Source/tasks.c
+      Source file:   Source/list.c
+      Source file:   Source/portable/GCC/ARM_CM4F/port.c
+      Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
+
+   * Component: ARM::RTOS&FreeRTOS:Heap&Heap_1@10.5.1
+      Source file:   Source/portable/MemMang/heap_1.c
+
+   * Component: Keil::Device:Startup@1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Include file:  Device/Include/TM4C123/TM4C123.h
+      Source file:   Device/Source/system_TM4C123.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
