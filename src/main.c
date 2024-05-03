@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
-#include <FreeRTOS.h>
+#include <freertos.h>
 #include <task.h>
 #include "tm4c123gh6pm.h"
 #include "DIO.h"
@@ -9,98 +9,73 @@
 int cntr = 0;
 QueueHandle_t xQueue;
 
-char *itoa(int num, char *str, int base)
-{
-	int i = 0;
-	int isNegative = 0;
+// TODO: make queues for message passing that if the passenger or driver wanted to use the MotorDriver
+// the MotorDriver will listen for the messages and execute them accordingly
 
-	// Handle negative numbers
-	if (num < 0 && base == 10)
+// Define variables
+volatile bool buttonPressed = false;
+volatile TickType_t buttonPressStartTime = 0;
+
+// Task for Button Monitoring
+void buttonTask(void *pvParameters)
+{
+	while (1)
 	{
-		isNegative = 1;
-		num = -num;
+		// Check button state
+		if (buttonIsPressed())
+		{
+			if (!buttonPressed)
+			{
+				// Button has been pressed
+				buttonPressed = true;
+				buttonPressStartTime = xTaskGetTickCount(); // Record start time
+			}
+		}
+		else
+		{
+			// Button released
+			buttonPressed = false;
+		}
+		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
+}
 
-	// Process individual digits
-	do
+// Timer callback function
+void buttonTimerCallback(TimerHandle_t xTimer)
+{
+	// Check if button has been pressed for more than 1 second
+	int currentTime = xTaskGetTickCount();
+	if (buttonPressed && (currentTime - buttonPressStartTime >= pdMS_TO_TICKS(1000)))
 	{
-		int rem = num % base;
-		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-		num /= base;
-	} while (num);
-
-	// If number is negative, append '-'
-	if (isNegative)
-	{
-		str[i++] = '-';
+		// Button has been pressed for more than 1 second
+		// send queue message raise up
 	}
-
-	str[i] = '\0'; // Null-terminate the string
-
-	// Reverse the string
-	int j = 0;
-	int len = i;
-	for (j = 0; j < len / 2; j++)
+	else if (buttonPressed && (currentTime - buttonPressStartTime < pdMS_TO_TICKS(1000)))
 	{
-		char temp = str[j];
-		str[j] = str[len - j - 1];
-		str[len - j - 1] = temp;
+		// Button pressed for less than 1 second
+		// send queue message auto roll
 	}
-
-	return str;
 }
 
-void UART5_init(void)
+// Task for Timer Management
+void timerTask(void *pvParameters)
 {
-	SYSCTL_RCGCUART_R |= 0x20; /* enable clock to UART5 */
-	SYSCTL_RCGCGPIO_R |= 0x10; /* enable clock to PORTE for PE4/Rx and RE5/Tx */
-	/* UART0 initialization */
-	UART5_CTL_R = 0;	 /* UART5 module disbable */
-	UART5_IBRD_R = 104;	 /* for 9600 baud rate, integer = 104 */
-	UART5_FBRD_R = 11;	 /* for 9600 baud rate, fractional = 11*/
-	UART5_CC_R = 0;		 /*select system clock*/
-	UART5_LCRH_R = 0x60; /* data lenght 8-bit, not parity bit, no FIFO */
-	UART5_CTL_R = 0x301; /* Enable UART5 module, Rx and Tx */
-
-	/* UART5 TX5 and RX5 use PE4 and PE5. Configure them digital and enable alternate function */
-	GPIO_PORTE_DEN_R |= 0x30;		/* set PE4 and PE5 as digital */
-	GPIO_PORTE_AFSEL_R = 0x30;		/* Use PE4,PE5 alternate function */
-	GPIO_PORTE_AMSEL_R = 0;			/* Turn off analg function*/
-	GPIO_PORTE_PCTL_R = 0x00110000; /* configure PE4 and PE5 for UART */
-}
-
-void UART0_init(void)
-{
-	SYSCTL_RCGCUART_R |= 0x01; /* Enable clock to UART0 */
-	SYSCTL_RCGCGPIO_R |= 0x01; /* Enable clock to Port A for PA0/Rx and PA1/Tx */
-
-	/* UART0 initialization */
-	UART0_CTL_R = 0;	 /* UART0 module disable */
-	UART0_IBRD_R = 104;	 /* Integer part of the baud rate divisor for 9600 baud rate */
-	UART0_FBRD_R = 11;	 /* Fractional part of the baud rate divisor for 9600 baud rate */
-	UART0_CC_R = 0;		 /* Select system clock as the UART clock source */
-	UART0_LCRH_R = 0x60; /* Data length 8-bit, no parity bit, no FIFO */
-	UART0_CTL_R = 0x301; /* Enable UART0 module, Rx and Tx */
-
-	/* UART0 TX0 and RX0 use PA1 and PA0. Configure them digital and enable alternate function */
-	GPIO_PORTA_DEN_R |= 0x03;		/* Set PA0 and PA1 as digital */
-	GPIO_PORTA_AFSEL_R |= 0x03;		/* Use PA0, PA1 alternate function */
-	GPIO_PORTA_AMSEL_R = 0;			/* Turn off analog function */
-	GPIO_PORTA_PCTL_R = 0x00000011; /* Configure PA0 and PA1 for UART0 */
-}
-
-void UART_Write(unsigned char data)
-{
-	while ((UART0_FR_R & (1 << 5)) != 0)
-		;			   /* wait until Tx buffer not full */
-	UART0_DR_R = data; /* before giving it another byte */
-}
-
-void UART_Write_String(char *str)
-{
-	while (*str)
+	TimerHandle_t buttonTimer = xTimerCreate("ButtonTimer", pdMS_TO_TICKS(100), pdFALSE, 0, buttonTimerCallback);
+	if (buttonTimer != NULL)
 	{
-		UART_Write(*(str++));
+		while (1)
+		{
+			// Start or stop the timer based on button state
+			if (buttonPressed)
+			{
+				xTimerStart(buttonTimer, 0);
+			}
+			else
+			{
+				xTimerStop(buttonTimer, 0);
+			}
+			vTaskDelay(pdMS_TO_TICKS(100)); // Check timer every 100ms
+		}
 	}
 }
 
@@ -111,6 +86,7 @@ void raiseUp()
 
 void MotorDriver(int direction)
 {
+	// listen for queue instructions
 	static int semaphore;
 	semaphore++;
 	if (semaphore == 1)
@@ -240,8 +216,6 @@ void psh_btn_init()
 
 void Init()
 {
-	psh_btn_init();
-	UART0_init();
 }
 
 int main()
@@ -249,20 +223,15 @@ int main()
 	Init();
 	xQueue = xQueueCreate(10, sizeof(uint32_t));
 
-	/*BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-							const char * const pcName,
-							const configSTACK_DEPTH_TYPE usStackDepth,
-							void * const pvParameters,
-							UBaseType_t uxPriority,
-							TaskHandle_t * const pxCreatedTask );*/
 	xTaskCreate(PassengerListner, "PB1", 200, NULL, 1, NULL);
 	xTaskCreate(DriverListner, "PB2", 200, NULL, 1, NULL);
 	xTaskCreate(Task3, "Uart0", 200, NULL, 1, NULL);
-	// Startup of the FreeRTOS scheduler.  The program should block here.
+
+	xTaskCreate(buttonTask, "ButtonTask", 200, NULL, 2, NULL);
+	xTaskCreate(timerTask, "TimerTask", 200, NULL, 2, NULL);
+
 	vTaskStartScheduler();
 
-	// The following line should never be reached.
-	// Failure to allocate enough memory from the heap could be a reason.
 	for (;;)
 		;
 }
