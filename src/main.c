@@ -223,9 +223,9 @@ int main()
 	Init();
 	xQueue = xQueueCreate(10, sizeof(uint32_t));
 
-	xTaskCreate(PassengerListner, "PB1", 200, NULL, 1, NULL);
-	xTaskCreate(DriverListner, "PB2", 200, NULL, 1, NULL);
-	xTaskCreate(Task3, "Uart0", 200, NULL, 1, NULL);
+	// xTaskCreate(PassengerListner, "PB1", 200, NULL, 1, NULL);
+	// xTaskCreate(DriverListner, "PB2", 200, NULL, 1, NULL);
+	// xTaskCreate(Task3, "Uart0", 200, NULL, 1, NULL);
 
 	xTaskCreate(buttonTask, "ButtonTask", 200, NULL, 2, NULL);
 	xTaskCreate(timerTask, "TimerTask", 200, NULL, 2, NULL);
