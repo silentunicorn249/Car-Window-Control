@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'workspace' 
+ * Project: 'project' 
  * Target:  'Target 1' 
  */
 
@@ -22,6 +22,8 @@
 #define RTE_RTOS_FreeRTOS_CORE          /* RTOS FreeRTOS Core */
 /* ARM::RTOS&FreeRTOS:Heap&Heap_1@10.5.1 */
 #define RTE_RTOS_FreeRTOS_HEAP_1        /* RTOS FreeRTOS Heap 1 */
+/* ARM::RTOS&FreeRTOS:Timers@10.5.1 */
+#define RTE_RTOS_FreeRTOS_TIMERS        /* RTOS FreeRTOS Timers */
 
 
 #endif /* RTE_COMPONENTS_H */

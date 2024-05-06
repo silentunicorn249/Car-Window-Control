@@ -1,7 +1,9 @@
-./objects/main.o: main.c D:\programs\Keil5\ARM\ARMCLANG\include\stdint.h \
-  D:\programs\Keil5\ARM\ARMCLANG\include\stdio.h \
-  C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\freertos.h \
+./objects/timers.o: \
+  C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\timers.c \
+  D:\programs\Keil5\ARM\ARMCLANG\include\stdlib.h \
+  C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\FreeRTOS.h \
   D:\programs\Keil5\ARM\ARMCLANG\include\stddef.h \
+  D:\programs\Keil5\ARM\ARMCLANG\include\stdint.h \
   RTE\RTOS\FreeRTOSConfig.h \
   C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h \
   D:\programs\Keil5\ARM\ARMCLANG\include\string.h \
@@ -13,6 +15,5 @@
   C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\mpu_wrappers.h \
   C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\task.h \
   C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\list.h \
-  tm4c123gh6pm.h DIO.h \
   C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\queue.h \
   C:\Users\Mark\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\Source\include\timers.h

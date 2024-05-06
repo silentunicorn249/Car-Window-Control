@@ -1,0 +1,1698 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Mark Bassem, HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  D:\programs\Keil5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\kolleya\spring 24\2-RTOS\project el sanady\Car-Window-Control\src\project.uvprojx
+Project File Date:  05/06/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\programs\Keil5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling freertos_evr.c...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(234): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  234 |     configASSERT( uxCriticalNesting == ~0UL );
+      |                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(300): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  300 |     configASSERT( configMAX_SYSCALL_INTERRUPT_PRIORITY );
+      |                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(305): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  305 |     configASSERT( portCPUID != portCORTEX_M7_r0p1_ID );
+      |                                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(306): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  306 |     configASSERT( portCPUID != portCORTEX_M7_r0p0_ID );
+      |                                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(356): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  356 |             configASSERT( ( portMAX_PRIGROUP_BITS - ulMaxPRIGROUPValue ) == configPRIO_BITS );
+      |                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(367): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  367 |         *pucFirstUserPriorityRegister = ulOriginalPriority;
+      |                                       ~ ^~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(409): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  409 |     configASSERT( uxCriticalNesting == 1000UL );
+      |                                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(425): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  425 |         configASSERT( ( portNVIC_INT_CTRL_REG & portVECTACTIVE_MASK ) == 0 );
+      |                                                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(432): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  432 |     configASSERT( uxCriticalNesting );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(820): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  820 |             configASSERT( ucCurrentPriority >= ucMaxSysCallPriority );
+      |                                                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(836): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  836 |         configASSERT( ( portAIRCR_REG & portPRIORITY_GROUP_MASK ) <= ulMaxPRIGROUPValue );
+      |                                                                                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(201): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  201 |     pxTopOfStack--;
+      |     ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(204): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  204 |     pxTopOfStack--;
+      |     ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(206): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  206 |     pxTopOfStack--;
+      |     ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(210): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  210 |     pxTopOfStack -= 5;                            /* R12, R3, R2 and R1. */
+      |     ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(215): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  215 |     pxTopOfStack--;
+      |     ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(218): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  218 |     pxTopOfStack -= 8; /* R11, R10, R9, R8, R7, R6, R5 and R4. */
+      |     ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(795): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  795 |             ucCurrentPriority = pcInterruptPriorityRegisters[ ulCurrentInterrupt ];
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+18 warnings generated.
+compiling port.c...
+compiling list.c...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(138): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  138 |     configASSERT( pv == NULL );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(99): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   99 |             pucAlignedHeap = ( uint8_t * ) ( ( ( portPOINTER_SIZE_TYPE ) & ucHeap[ portBYTE_ALIGNMENT - 1 ] ) & ( ~( ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) ) );
+      |                                                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(109): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  109 |             pvReturn = pucAlignedHeap + xNextFreeByte;
+      |                        ^~~~~~~~~~~~~~
+3 warnings generated.
+compiling heap_1.c...
+assembling startup_TM4C123.s...
+RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  298 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(338): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  338 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(357): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  357 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(713): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  713 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(729): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  729 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(774): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  774 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(779): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  779 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(872): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  872 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(885): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  885 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(892): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  892 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(897): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  897 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(904): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  904 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(910): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  910 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(917): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  917 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(924): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  924 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(929): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  929 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(936): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  936 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(942): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  942 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(949): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  949 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(956): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  956 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(961): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  961 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(968): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  968 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(974): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  974 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(981): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  981 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(988): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  988 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(993): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+  993 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1000): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1000 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1006): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1006 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1013): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1013 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1020): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1020 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1025): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1025 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1032): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1032 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1038): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1038 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1045): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1045 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1052): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1052 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1057): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1057 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1064): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1064 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1070): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1070 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1077): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1077 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1084): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1084 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1089): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1089 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1096): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1096 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1102): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1102 |   union {
+      |   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(1251): warning: anonymous unions are a C11 extension [-Wc11-extensions]
+ 1251 |   union {
+      |   ^
+44 warnings generated.
+compiling system_TM4C123.c...
+main.c(3): warning: non-portable path to file '<FreeRTOS.h>'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+    3 | #include <freertos.h>
+      |          ^~~~~~~~~~~~
+      |          <FreeRTOS.h>
+main.c(6): warning: In file included from...
+./DIO.h(16): warning: no newline at end of file [-Wnewline-eof]
+   16 | #define LOW 0
+      |              ^
+main.c(13): warning: no previous extern declaration for non-static variable 'lastDirection' [-Wmissing-variable-declarations]
+   13 | short lastDirection = 0; // directions are -1, 0, 1
+      |       ^
+main.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   13 | short lastDirection = 0; // directions are -1, 0, 1
+      | ^
+main.c(19): warning: no previous extern declaration for non-static variable 'buttonPressed' [-Wmissing-variable-declarations]
+   19 | volatile char buttonPressed = 0;
+      |               ^
+main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   19 | volatile char buttonPressed = 0;
+      |          ^
+main.c(20): warning: no previous extern declaration for non-static variable 'buttonPressStartTime' [-Wmissing-variable-declarations]
+   20 | volatile TickType_t buttonPressStartTime = 0;
+      |                     ^
+main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   20 | volatile TickType_t buttonPressStartTime = 0;
+      |          ^
+main.c(22): warning: no previous prototype for function 'Button_Pressed' [-Wmissing-prototypes]
+   22 | int Button_Pressed(void)
+      |     ^
+main.c(22): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   22 | int Button_Pressed(void)
+      | ^
+      | static 
+main.c(27): warning: unused parameter 'direction' [-Wunused-parameter]
+   27 | void MotorDriver(int direction)
+      |                      ^
+main.c(27): warning: no previous prototype for function 'MotorDriver' [-Wmissing-prototypes]
+   27 | void MotorDriver(int direction)
+      |      ^
+main.c(27): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   27 | void MotorDriver(int direction)
+      | ^
+      | static 
+main.c(89): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   89 |                 GPIO_PORTF_DATA_R &= ~(1 << 1);
+      |                                   ~~ ^~~~~~~~~
+main.c(90): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+   90 |                 GPIO_PORTF_DATA_R &= ~(1 << 2);
+      |                                   ~~ ^~~~~~~~~
+main.c(63): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+   63 | void PassengerListner(void *pvParameters)
+      |                             ^
+main.c(63): warning: no previous prototype for function 'PassengerListner' [-Wmissing-prototypes]
+   63 | void PassengerListner(void *pvParameters)
+      |      ^
+main.c(63): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   63 | void PassengerListner(void *pvParameters)
+      | ^
+      | static 
+main.c(64): warning: function 'PassengerListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+   64 | {
+      | ^
+main.c(123): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  123 |                 GPIO_PORTF_DATA_R &= ~(1 << 1);
+      |                                   ~~ ^~~~~~~~~
+main.c(124): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  124 |                 GPIO_PORTF_DATA_R &= ~(1 << 2);
+      |                                   ~~ ^~~~~~~~~
+main.c(96): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+   96 | void DriverListner(void *pvParameters)
+      |                          ^
+main.c(96): warning: no previous prototype for function 'DriverListner' [-Wmissing-prototypes]
+   96 | void DriverListner(void *pvParameters)
+      |      ^
+main.c(96): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   96 | void DriverListner(void *pvParameters)
+      | ^
+      | static 
+main.c(97): warning: function 'DriverListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+   97 | {
+      | ^
+main.c(130): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  130 | void LimitSwitchListner()
+      |                        ^
+      |                         void
+main.c(130): warning: no previous prototype for function 'LimitSwitchListner' [-Wmissing-prototypes]
+  130 | void LimitSwitchListner()
+      |      ^
+main.c(130): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  130 | void LimitSwitchListner()
+      | ^
+      | static 
+main.c(131): warning: function 'LimitSwitchListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  131 | {
+      | ^
+main.c(166): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  166 | void psh_btn_init()
+      |                  ^
+      |                   void
+main.c(171): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  171 |         GPIO_PORTF_DIR_R &= ~0x11; // PF0 as input
+      |                          ~~ ^~~~~
+main.c(166): warning: no previous prototype for function 'psh_btn_init' [-Wmissing-prototypes]
+  166 | void psh_btn_init()
+      |      ^
+main.c(166): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  166 | void psh_btn_init()
+      | ^
+      | static 
+main.c(177): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  177 | void Init()
+      |          ^
+      |           void
+main.c(177): warning: no previous prototype for function 'Init' [-Wmissing-prototypes]
+  177 | void Init()
+      |      ^
+main.c(177): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  177 | void Init()
+      | ^
+      | static 
+main.c(184): warning: unused parameter 'xTimer' [-Wunused-parameter]
+  184 | void timerCallback(TimerHandle_t xTimer)
+      |                                  ^
+main.c(184): warning: no previous prototype for function 'timerCallback' [-Wmissing-prototypes]
+  184 | void timerCallback(TimerHandle_t xTimer)
+      |      ^
+main.c(184): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  184 | void timerCallback(TimerHandle_t xTimer)
+      | ^
+      | static 
+main.c(190): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  190 | int main()
+      |         ^
+      |          void
+main.c(199): warning: incompatible function pointer types passing 'void (int)' to parameter of type 'TaskFunction_t' (aka 'void (*)(void *)') [-Wincompatible-function-pointer-types-strict]
+  199 |         xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
+      |                     ^~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include\task.h(355): note: passing argument to parameter 'pxTaskCode' here
+  355 |     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+      |                                            ^
+main.c(218): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  218 |         TIMER0_TAILR_R = 16000 * time - 1;
+      |                        ~ ~~~~~~~~~~~~~^~~
+main.c(223): warning: no newline at end of file [-Wnewline-eof]
+  223 | }
+      |  ^
+main.c(14): warning: no previous extern declaration for non-static variable 'xQueue' [-Wmissing-variable-declarations]
+   14 | QueueHandle_t xQueue;
+      |               ^
+main.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   14 | QueueHandle_t xQueue;
+      | ^
+33 warnings generated.
+compiling main.c...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(302): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  302 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(329): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  329 |                         queueYIELD_IF_USING_PREEMPTION();
+      |                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(355): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  355 |     configASSERT( xReturn != pdFAIL );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(126): warning: padding struct 'struct QueueDefinition' with 2 bytes to align 'pxQueueSetContainer' [-Wpadded]
+  126 |         struct QueueDefinition * pxQueueSetContainer;
+      |                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(100): warning: padding size of 'struct QueueDefinition' with 3 bytes to alignment boundary [-Wpadded]
+  100 | typedef struct QueueDefinition /* The old naming convention is used to prevent breaking kernel aware debuggers. */
+      |                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(484): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  484 |             configASSERT( pxNewQueue );
+      |                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(614): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  614 |         configASSERT( xSemaphore );
+      |                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(646): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  646 |         configASSERT( xSemaphore );
+      |                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(673): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  673 |         configASSERT( pxMutex );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(729): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  729 |         configASSERT( pxMutex );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(825): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  825 |             configASSERT( xHandle );
+      |                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(844): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  844 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(845): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  845 |     configASSERT( !( ( pvItemToQueue == NULL ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ) );
+      |                                                                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(846): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  846 |     configASSERT( !( ( xCopyPosition == queueOVERWRITE ) && ( pxQueue->uxLength != 1 ) ) );
+      |                                                                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(849): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  849 |         configASSERT( !( ( xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED ) && ( xTicksToWait != 0 ) ) );
+      |                                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(888): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  888 |                             queueYIELD_IF_USING_PREEMPTION();
+      |                                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(907): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  907 |                                 queueYIELD_IF_USING_PREEMPTION();
+      |                                                                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(920): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  920 |                             queueYIELD_IF_USING_PREEMPTION();
+      |                                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1024): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1024 |                     portYIELD_WITHIN_API();
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1056): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1056 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1057): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1057 |     configASSERT( !( ( pvItemToQueue == NULL ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ) );
+      |                                                                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1058): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1058 |     configASSERT( !( ( xCopyPosition == queueOVERWRITE ) && ( pxQueue->uxLength != 1 ) ) );
+      |                                                                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1195): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1195 |                 prvIncrementQueueTxLock( pxQueue, cTxLock );
+      |                                                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1225): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1225 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1229): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1229 |     configASSERT( pxQueue->uxItemSize == 0 );
+      |                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1234): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1234 |     configASSERT( !( ( pxQueue->uxQueueType == queueQUEUE_IS_MUTEX ) && ( pxQueue->u.xSemaphore.xMutexHolder != NULL ) ) );
+      |                                                                                                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1361): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1361 |                 prvIncrementQueueTxLock( pxQueue, cTxLock );
+      |                                                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1387): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1387 |     configASSERT( ( pxQueue ) );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1391): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1391 |     configASSERT( !( ( ( pvBuffer ) == NULL ) && ( ( pxQueue )->uxItemSize != ( UBaseType_t ) 0U ) ) );
+      |                                                                                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1396): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1396 |         configASSERT( !( ( xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED ) && ( xTicksToWait != 0 ) ) );
+      |                                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1425): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1425 |                         queueYIELD_IF_USING_PREEMPTION();
+      |                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1485): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1485 |                     portYIELD_WITHIN_API();
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1533): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1533 |     configASSERT( ( pxQueue ) );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1537): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1537 |     configASSERT( pxQueue->uxItemSize == 0 );
+      |                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1542): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1542 |         configASSERT( !( ( xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED ) && ( xTicksToWait != 0 ) ) );
+      |                                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1588): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1588 |                         queueYIELD_IF_USING_PREEMPTION();
+      |                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1668): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1668 |                     portYIELD_WITHIN_API();
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1741): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1741 |     configASSERT( ( pxQueue ) );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1745): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1745 |     configASSERT( !( ( ( pvBuffer ) == NULL ) && ( ( pxQueue )->uxItemSize != ( UBaseType_t ) 0U ) ) );
+      |                                                                                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1750): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1750 |         configASSERT( !( ( xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED ) && ( xTicksToWait != 0 ) ) );
+      |                                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1785): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1785 |                         queueYIELD_IF_USING_PREEMPTION();
+      |                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1846): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1846 |                     portYIELD_WITHIN_API();
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1890): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1890 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1891): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1891 |     configASSERT( !( ( pvBuffer == NULL ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ) );
+      |                                                                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1958): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1958 |                 prvIncrementQueueRxLock( pxQueue, cRxLock );
+      |                                                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1983): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1983 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1984): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1984 |     configASSERT( !( ( pvBuffer == NULL ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) ) );
+      |                                                                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(1985): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1985 |     configASSERT( pxQueue->uxItemSize != 0 ); /* Can't peek a semaphore. */
+      |                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2034): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2034 |     configASSERT( xQueue );
+      |                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2051): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2051 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2068): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2068 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2079): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2079 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2425): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2425 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2466): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2466 |     configASSERT( pxQueue );
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(3043): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3043 |         configASSERT( pxQueueSetContainer ); /* LCOV_EXCL_BR_LINE */
+      |                                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(3044): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3044 |         configASSERT( pxQueueSetContainer->uxMessagesWaiting < pxQueueSetContainer->uxLength );
+      |                                                                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(3076): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3076 |                 prvIncrementQueueTxLock( pxQueueSetContainer, cTxLock );
+      |                                                                        ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(311): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  311 |             pxQueue->u.xQueue.pcTail = pxQueue->pcHead + ( pxQueue->uxLength * pxQueue->uxItemSize ); /*lint !e9016 Pointer arithmetic allowed on char types, especially when it assists conveying intent. */
+      |                                        ^~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(314): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  314 |             pxQueue->u.xQueue.pcReadFrom = pxQueue->pcHead + ( ( pxQueue->uxLength - 1U ) * pxQueue->uxItemSize ); /*lint !e9016 Pointer arithmetic allowed on char types, especially when it assists conveying intent. */
+      |                                            ^~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(463): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  463 |                 pucQueueStorage += sizeof( Queue_t ); /*lint !e9016 Pointer arithmetic allowed on char types, especially when it assists conveying intent. */
+      |                 ^~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2206): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+ 2206 |         pxQueue->pcWriteTo += pxQueue->uxItemSize;                                                       /*lint !e9016 Pointer arithmetic on char types ok, especially in this use case where it is the clearest way of conveying intent. */
+      |         ~~~~~~~~~^~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2220): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+ 2220 |         pxQueue->u.xQueue.pcReadFrom -= pxQueue->uxItemSize;
+      |         ~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2224): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+ 2224 |             pxQueue->u.xQueue.pcReadFrom = ( pxQueue->u.xQueue.pcTail - pxQueue->uxItemSize );
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(2263): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+ 2263 |         pxQueue->u.xQueue.pcReadFrom += pxQueue->uxItemSize;           /*lint !e9016 Pointer arithmetic on char types ok, especially in this use case where it is the clearest way of conveying intent. */
+      |         ~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+64 warnings generated.
+compiling queue.c...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(281): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  281 |         configASSERT( xReturn );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(75): warning: padding size of 'struct tmrTimerControl' with 3 bytes to alignment boundary [-Wpadded]
+   75 |     typedef struct tmrTimerControl                  /* The old naming convention is used to prevent breaking kernel aware debuggers. */
+      |                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(363): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  363 |         configASSERT( ( xTimerPeriodInTicks > 0 ) );
+      |                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(395): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  395 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(437): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  437 |         configASSERT( ( xTimerTaskHandle != NULL ) );
+      |                                                     ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(446): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  446 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(456): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  456 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(477): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  477 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(507): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  507 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(517): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  517 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(569): warning: function 'prvTimerTask' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  569 |     {
+      |     ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(650): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  650 |                         portYIELD_WITHIN_API();
+      |                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(779): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  779 |                     configASSERT( pxCallback );
+      |                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(862): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  862 |                         configASSERT( ( pxTimer->xTimerPeriodInTicks > 0 ) );
+      |                                                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(989): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  989 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(1014): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1014 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(1031): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1031 |         configASSERT( xTimer );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/timers.c(1081): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1081 |             configASSERT( xTimerQueue );
+      |                                        ^
+18 warnings generated.
+compiling timers.c...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(329): warning: no previous extern declaration for non-static variable 'pxCurrentTCB' [-Wmissing-variable-declarations]
+  329 | portDONT_DISCARD PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL;
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(329): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  329 | portDONT_DISCARD PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL;
+      |                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(278): warning: padding struct 'struct tskTaskControlBlock' with 2 bytes to align 'uxTCBNumber' [-Wpadded]
+  278 |         UBaseType_t uxTCBNumber;  /*< Stores a number that increments each time a TCB is created.  It allows debuggers to determine when a task has been deleted and then recreated. */
+      |                     ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(255): warning: padding size of 'struct tskTaskControlBlock' with 2 bytes to alignment boundary [-Wpadded]
+  255 | typedef struct tskTaskControlBlock       /* The old naming convention is used to prevent breaking kernel aware debuggers. */
+      |                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(376): warning: no previous extern declaration for non-static variable 'uxTopUsedPriority' [-Wmissing-variable-declarations]
+  376 | const volatile UBaseType_t uxTopUsedPriority = configMAX_PRIORITIES - 1U;
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(376): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  376 | const volatile UBaseType_t uxTopUsedPriority = configMAX_PRIORITIES - 1U;
+      |                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(861): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  861 |         configASSERT( ( ( ( portPOINTER_SIZE_TYPE ) pxTopOfStack & ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) == 0UL ) );
+      |                                                                                                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(914): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  914 |     configASSERT( uxPriority < configMAX_PRIORITIES );
+      |                                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1084): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1084 |         prvAddTaskToReadyList( pxNewTCB );
+      |                                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1096): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1096 |             taskYIELD_IF_USING_PREEMPTION();
+      |                                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1125): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1125 |                 taskRESET_READY_PRIORITY( pxTCB->uxPriority );
+      |                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1199): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1199 |                 configASSERT( uxSchedulerSuspended == 0 );
+      |                                                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1200): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1200 |                 portYIELD_WITHIN_API();
+      |                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1220): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1220 |         configASSERT( pxPreviousWakeTime );
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1221): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1221 |         configASSERT( ( xTimeIncrement > 0U ) );
+      |                                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1222): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1222 |         configASSERT( uxSchedulerSuspended == 0 );
+      |                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1286): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1286 |             portYIELD_WITHIN_API();
+      |                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1308): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1308 |             configASSERT( uxSchedulerSuspended == 0 );
+      |                                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1333): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1333 |             portYIELD_WITHIN_API();
+      |                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1354): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1354 |         configASSERT( pxTCB );
+      |                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1514): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1514 |         configASSERT( uxNewPriority < configMAX_PRIORITIES );
+      |                                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1644): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1644 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1653): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1653 |                     taskYIELD_IF_USING_PREEMPTION();
+      |                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1689): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1689 |                 taskRESET_READY_PRIORITY( pxTCB->uxPriority );
+      |                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1746): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1746 |                 configASSERT( uxSchedulerSuspended == 0 );
+      |                                                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1747): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1747 |                 portYIELD_WITHIN_API();
+      |                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1788): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1788 |         configASSERT( xTask );
+      |                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1830): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1830 |         configASSERT( xTaskToResume );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1845): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1845 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1853): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1853 |                         taskYIELD_IF_USING_PREEMPTION();
+      |                                                        ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1885): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1885 |         configASSERT( xTaskToResume );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1931): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 1931 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2066): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2066 |         configASSERT( xReturn != errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY );
+      |                                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2181): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2181 |     configASSERT( uxSchedulerSuspended );
+      |                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2201): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2201 |                     listREMOVE_ITEM( &( pxTCB->xEventListItem ) );
+      |                                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2203): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2203 |                     listREMOVE_ITEM( &( pxTCB->xStateListItem ) );
+      |                                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2204): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2204 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2267): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2267 |                     taskYIELD_IF_USING_PREEMPTION();
+      |                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2347): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2347 |     configASSERT( pxTCB );
+      |                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2368): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2368 |             listGET_OWNER_OF_NEXT_ENTRY( pxFirstTCB, pxList ); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2372): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2372 |                 listGET_OWNER_OF_NEXT_ENTRY( pxNextTCB, pxList ); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |                                                                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2431): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2431 |         configASSERT( strlen( pcNameToQuery ) < configMAX_TASK_NAME_LEN );
+      |                                                                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(40): warning: In file included from...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include\task.h(160): warning: padding struct 'struct xTASK_STATUS' with 3 bytes to align 'uxCurrentPriority' [-Wpadded]
+  160 |     UBaseType_t uxCurrentPriority;                /* The priority at which the task was running (may be inherited) when the structure was populated. */
+      |                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include\task.h(154): warning: padding size of 'struct xTASK_STATUS' with 2 bytes to alignment boundary [-Wpadded]
+  154 | typedef struct xTASK_STATUS
+      |                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2568): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2568 |         configASSERT( ( xIdleTaskHandle != NULL ) );
+      |                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2586): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2586 |         configASSERT( ( xTickCount + xTicksToJump ) <= xNextTaskUnblockTime );
+      |                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2593): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2593 |             configASSERT( uxSchedulerSuspended );
+      |                                                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2594): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2594 |             configASSERT( xTicksToJump != ( TickType_t ) 0 );
+      |                                                             ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2622): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2622 |     configASSERT( uxSchedulerSuspended == 0 );
+      |                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2647): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2647 |         configASSERT( pxTCB );
+      |                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2685): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2685 |                 prvAddTaskToReadyList( pxTCB );
+      |                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2743): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2743 |             taskSWITCH_DELAYED_LISTS();
+      |                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2793): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2793 |                     listREMOVE_ITEM( &( pxTCB->xStateListItem ) );
+      |                                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2799): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2799 |                         listREMOVE_ITEM( &( pxTCB->xEventListItem ) );
+      |                                                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2808): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 2808 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3062): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3062 |         taskSELECT_HIGHEST_PRIORITY_TASK(); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3086): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3086 |     configASSERT( pxEventList );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3112): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3112 |     configASSERT( pxEventList );
+      |                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3116): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3116 |     configASSERT( uxSchedulerSuspended != 0 );
+      |                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3128): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3128 |     listINSERT_END( pxEventList, &( pxCurrentTCB->xEventListItem ) );
+      |                                                                     ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3140): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3140 |         configASSERT( pxEventList );
+      |                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3152): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3152 |         listINSERT_END( pxEventList, &( pxCurrentTCB->xEventListItem ) );
+      |                                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3188): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3188 |     configASSERT( pxUnblockedTCB );
+      |                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3189): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3189 |     listREMOVE_ITEM( &( pxUnblockedTCB->xEventListItem ) );
+      |                                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3193): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3193 |         listREMOVE_ITEM( &( pxUnblockedTCB->xStateListItem ) );
+      |                                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3194): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3194 |         prvAddTaskToReadyList( pxUnblockedTCB );
+      |                                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3214): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3214 |         listINSERT_END( &( xPendingReadyList ), &( pxUnblockedTCB->xEventListItem ) );
+      |                                                                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3244): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3244 |     configASSERT( uxSchedulerSuspended != pdFALSE );
+      |                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3252): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3252 |     configASSERT( pxUnblockedTCB );
+      |                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3253): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3253 |     listREMOVE_ITEM( pxEventListItem );
+      |                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3272): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3272 |     listREMOVE_ITEM( &( pxUnblockedTCB->xStateListItem ) );
+      |                                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3273): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3273 |     prvAddTaskToReadyList( pxUnblockedTCB );
+      |                                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3288): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3288 |     configASSERT( pxTimeOut );
+      |                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3311): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3311 |     configASSERT( pxTimeOut );
+      |                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3312): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3312 |     configASSERT( pxTicksToWait );
+      |                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3469): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3469 |                 taskYIELD();
+      |                            ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3513): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3513 |                     configASSERT( xNextTaskUnblockTime >= xTickCount );
+      |                                                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3428): warning: function 'prvIdleTask' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+ 3428 | {
+      | ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3832): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3832 |             listGET_OWNER_OF_NEXT_ENTRY( pxFirstTCB, pxList ); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3840): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 3840 |                 listGET_OWNER_OF_NEXT_ENTRY( pxNextTCB, pxList ); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |                                                                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4112): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4112 |                     prvAddTaskToReadyList( pxMutexHolderTCB );
+      |                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4168): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4168 |             configASSERT( pxTCB == pxCurrentTCB );
+      |                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4169): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4169 |             configASSERT( pxTCB->uxMutexesHeld );
+      |                                                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4202): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4202 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4248): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4248 |             configASSERT( pxTCB->uxMutexesHeld );
+      |                                                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4275): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4275 |                     configASSERT( pxTCB != pxCurrentTCB );
+      |                                                          ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4315): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4315 |                         prvAddTaskToReadyList( pxTCB );
+      |                                                       ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4697): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4697 |         configASSERT( uxIndexToWait < configTASK_NOTIFICATION_ARRAY_ENTRIES );
+      |                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4716): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4716 |                     portYIELD_WITHIN_API();
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4771): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4771 |         configASSERT( uxIndexToWait < configTASK_NOTIFICATION_ARRAY_ENTRIES );
+      |                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4795): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4795 |                     portYIELD_WITHIN_API();
+      |                                           ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4859): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4859 |         configASSERT( uxIndexToNotify < configTASK_NOTIFICATION_ARRAY_ENTRIES );
+      |                                                                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4860): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4860 |         configASSERT( xTaskToNotify );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4913): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4913 |                     configASSERT( xTickCount == ( TickType_t ) 0 );
+      |                                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4908): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+ 4908 |                 default:
+      |                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4924): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4924 |                 listREMOVE_ITEM( &( pxTCB->xStateListItem ) );
+      |                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4925): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4925 |                 prvAddTaskToReadyList( pxTCB );
+      |                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4928): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4928 |                 configASSERT( listLIST_ITEM_CONTAINER( &( pxTCB->xEventListItem ) ) == NULL );
+      |                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4950): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4950 |                     taskYIELD_IF_USING_PREEMPTION();
+      |                                                    ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4984): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4984 |         configASSERT( xTaskToNotify );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4985): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 4985 |         configASSERT( uxIndexToNotify < configTASK_NOTIFICATION_ARRAY_ENTRIES );
+      |                                                                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5056): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5056 |                     configASSERT( xTickCount == ( TickType_t ) 0 );
+      |                                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5051): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+ 5051 |                 default:
+      |                 ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5067): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5067 |                 configASSERT( listLIST_ITEM_CONTAINER( &( pxTCB->xEventListItem ) ) == NULL );
+      |                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5071): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5071 |                     listREMOVE_ITEM( &( pxTCB->xStateListItem ) );
+      |                                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5072): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5072 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5078): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5078 |                     listINSERT_END( &( xPendingReadyList ), &( pxTCB->xEventListItem ) );
+      |                                                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5119): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5119 |         configASSERT( xTaskToNotify );
+      |                                      ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5120): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5120 |         configASSERT( uxIndexToNotify < configTASK_NOTIFICATION_ARRAY_ENTRIES );
+      |                                                                                ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5158): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5158 |                 configASSERT( listLIST_ITEM_CONTAINER( &( pxTCB->xEventListItem ) ) == NULL );
+      |                                                                                              ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5162): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5162 |                     listREMOVE_ITEM( &( pxTCB->xStateListItem ) );
+      |                                                                  ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5163): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5163 |                     prvAddTaskToReadyList( pxTCB );
+      |                                                   ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5169): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5169 |                     listINSERT_END( &( xPendingReadyList ), &( pxTCB->xEventListItem ) );
+      |                                                                                         ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5206): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5206 |         configASSERT( uxIndexToClear < configTASK_NOTIFICATION_ARRAY_ENTRIES );
+      |                                                                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5332): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+ 5332 |             listINSERT_END( &xSuspendedTaskList, &( pxCurrentTCB->xStateListItem ) );
+      |                                                                                     ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(857): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  857 |         pxTopOfStack = &( pxNewTCB->pxStack[ ulStackDepth - ( uint32_t ) 1 ] );
+      |                           ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(889): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  889 |             pxNewTCB->pcTaskName[ x ] = pcName[ x ];
+      |             ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(889): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  889 |             pxNewTCB->pcTaskName[ x ] = pcName[ x ];
+      |                                         ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(894): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  894 |             if( pcName[ x ] == ( char ) 0x00 )
+      |                 ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(906): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  906 |         pxNewTCB->pcTaskName[ configMAX_TASK_NAME_LEN - 1 ] = '\0';
+      |         ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1084): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1084 |         prvAddTaskToReadyList( pxNewTCB );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1084): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1084 |         prvAddTaskToReadyList( pxNewTCB );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1084): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1084 |         prvAddTaskToReadyList( pxNewTCB );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1125): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1125 |                 taskRESET_READY_PRIORITY( pxTCB->uxPriority );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(189): note: expanded from macro 'taskRESET_READY_PRIORITY'
+  189 |         if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ ( uxPriority ) ] ) ) == ( UBaseType_t ) 0 ) \
+      |                                         ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(263): note: expanded from macro 'listCURRENT_LIST_LENGTH'
+  263 | #define listCURRENT_LIST_LENGTH( pxList )                 ( ( pxList )->uxNumberOfItems )
+      |                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1399): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1399 |                                 if( pxTCB->ucNotifyState[ x ] == taskWAITING_NOTIFICATION )
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1627): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1627 |                 if( listIS_CONTAINED_WITHIN( &( pxReadyTasksLists[ uxPriorityUsedOnEntry ] ), &( pxTCB->xStateListItem ) ) != pdFALSE )
+      |                                                 ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(406): note: expanded from macro 'listIS_CONTAINED_WITHIN'
+  406 | #define listIS_CONTAINED_WITHIN( pxList, pxListItem )    ( ( ( pxListItem )->pxContainer == ( pxList ) ) ? ( pdTRUE ) : ( pdFALSE ) )
+      |                                                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1644): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1644 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1644): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1644 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1644): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1644 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1689): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1689 |                 taskRESET_READY_PRIORITY( pxTCB->uxPriority );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(189): note: expanded from macro 'taskRESET_READY_PRIORITY'
+  189 |         if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ ( uxPriority ) ] ) ) == ( UBaseType_t ) 0 ) \
+      |                                         ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(263): note: expanded from macro 'listCURRENT_LIST_LENGTH'
+  263 | #define listCURRENT_LIST_LENGTH( pxList )                 ( ( pxList )->uxNumberOfItems )
+      |                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1714): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1714 |                     if( pxTCB->ucNotifyState[ x ] == taskWAITING_NOTIFICATION )
+      |                         ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1718): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1718 |                         pxTCB->ucNotifyState[ x ] = taskNOT_WAITING_NOTIFICATION;
+      |                         ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1845): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1845 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1845): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1845 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1845): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1845 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1931): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1931 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1931): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1931 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(1931): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1931 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2149): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2149 |         else if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > 1 )
+      |                                              ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(263): note: expanded from macro 'listCURRENT_LIST_LENGTH'
+  263 | #define listCURRENT_LIST_LENGTH( pxList )                 ( ( pxList )->uxNumberOfItems )
+      |                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2204): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2204 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2204): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2204 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2204): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2204 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2380): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2380 |                     cNextChar = pxNextTCB->pcTaskName[ x ];
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2382): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2382 |                     if( cNextChar != pcNameToQuery[ x ] )
+      |                                      ^~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2439): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2439 |                 pxTCB = prvSearchForNameWithinSingleList( ( List_t * ) &( pxReadyTasksLists[ uxQueue ] ), pcNameToQuery );
+      |                                                                           ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2505): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2505 |                     uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), &( pxReadyTasksLists[ uxQueue ] ), eReady );
+      |                                                                ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2505): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2505 |                     uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), &( pxReadyTasksLists[ uxQueue ] ), eReady );
+      |                                                                                                  ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2510): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2510 |                 uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), ( List_t * ) pxDelayedTaskList, eBlocked );
+      |                                                            ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2511): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2511 |                 uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), ( List_t * ) pxOverflowDelayedTaskList, eBlocked );
+      |                                                            ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2517): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2517 |                     uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), &xTasksWaitingTermination, eDeleted );
+      |                                                                ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2525): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2525 |                     uxTask += prvListTasksWithinSingleList( &( pxTaskStatusArray[ uxTask ] ), &xSuspendedTaskList, eSuspended );
+      |                                                                ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2685): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2685 |                 prvAddTaskToReadyList( pxTCB );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2685): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2685 |                 prvAddTaskToReadyList( pxTCB );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2685): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2685 |                 prvAddTaskToReadyList( pxTCB );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2808): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2808 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2808): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2808 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2808): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2808 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(2841): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 2841 |             if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ pxCurrentTCB->uxPriority ] ) ) > ( UBaseType_t ) 1 )
+      |                                             ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(263): note: expanded from macro 'listCURRENT_LIST_LENGTH'
+  263 | #define listCURRENT_LIST_LENGTH( pxList )                 ( ( pxList )->uxNumberOfItems )
+      |                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3062): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3062 |         taskSELECT_HIGHEST_PRIORITY_TASK(); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(178): note: expanded from macro 'taskSELECT_HIGHEST_PRIORITY_TASK'
+  178 |         configASSERT( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ uxTopPriority ] ) ) > 0 ); \
+      |                                                   ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(263): note: expanded from macro 'listCURRENT_LIST_LENGTH'
+  263 | #define listCURRENT_LIST_LENGTH( pxList )                 ( ( pxList )->uxNumberOfItems )
+      |                                                               ^~~~~~
+./RTE/RTOS\FreeRTOSConfig.h(87): note: expanded from macro 'configASSERT'
+   87 | #define configASSERT( x )                     if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
+      |                                                     ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3062): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3062 |         taskSELECT_HIGHEST_PRIORITY_TASK(); /*lint !e9079 void * is used as this macro is used with timers and co-routines too.  Alignment is known to be fine as the type of the pointer stored and retrieved is the same. */
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(179): note: expanded from macro 'taskSELECT_HIGHEST_PRIORITY_TASK'
+  179 |         listGET_OWNER_OF_NEXT_ENTRY( pxCurrentTCB, &( pxReadyTasksLists[ uxTopPriority ] ) );   \
+      |                                                       ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(287): note: expanded from macro 'listGET_OWNER_OF_NEXT_ENTRY'
+  287 |         List_t * const pxConstList = ( pxList );                                               \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3194): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3194 |         prvAddTaskToReadyList( pxUnblockedTCB );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3194): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3194 |         prvAddTaskToReadyList( pxUnblockedTCB );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3194): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3194 |         prvAddTaskToReadyList( pxUnblockedTCB );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3273): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3273 |     prvAddTaskToReadyList( pxUnblockedTCB );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3273): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3273 |     prvAddTaskToReadyList( pxUnblockedTCB );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3273): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3273 |     prvAddTaskToReadyList( pxUnblockedTCB );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3467): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3467 |             if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > ( UBaseType_t ) 1 )
+      |                                             ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(263): note: expanded from macro 'listCURRENT_LIST_LENGTH'
+  263 | #define listCURRENT_LIST_LENGTH( pxList )                 ( ( pxList )->uxNumberOfItems )
+      |                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3663): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3663 |         vListInitialise( &( pxReadyTasksLists[ uxPriority ] ) );
+      |                             ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3841): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 3841 |                 vTaskGetInfo( ( TaskHandle_t ) pxNextTCB, &( pxTaskStatusArray[ uxTask ] ), pdTRUE, eState );
+      |                                                              ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(3864): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+ 3864 |             pucStackByte -= portSTACK_GROWTH;
+      |             ^~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4096): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4096 |                 if( listIS_CONTAINED_WITHIN( &( pxReadyTasksLists[ pxMutexHolderTCB->uxPriority ] ), &( pxMutexHolderTCB->xStateListItem ) ) != pdFALSE )
+      |                                                 ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(406): note: expanded from macro 'listIS_CONTAINED_WITHIN'
+  406 | #define listIS_CONTAINED_WITHIN( pxList, pxListItem )    ( ( ( pxListItem )->pxContainer == ( pxList ) ) ? ( pdTRUE ) : ( pdFALSE ) )
+      |                                                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4112): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4112 |                     prvAddTaskToReadyList( pxMutexHolderTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4112): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4112 |                     prvAddTaskToReadyList( pxMutexHolderTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4112): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4112 |                     prvAddTaskToReadyList( pxMutexHolderTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4202): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4202 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4202): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4202 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4202): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4202 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4301): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4301 |                     if( listIS_CONTAINED_WITHIN( &( pxReadyTasksLists[ uxPriorityUsedOnEntry ] ), &( pxTCB->xStateListItem ) ) != pdFALSE )
+      |                                                     ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(406): note: expanded from macro 'listIS_CONTAINED_WITHIN'
+  406 | #define listIS_CONTAINED_WITHIN( pxList, pxListItem )    ( ( ( pxListItem )->pxContainer == ( pxList ) ) ? ( pdTRUE ) : ( pdFALSE ) )
+      |                                                                                               ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4315): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4315 |                         prvAddTaskToReadyList( pxTCB );
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4315): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4315 |                         prvAddTaskToReadyList( pxTCB );
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4315): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4315 |                         prvAddTaskToReadyList( pxTCB );
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4702): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4702 |             if( pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ] == 0UL )
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4705): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4705 |                 pxCurrentTCB->ucNotifyState[ uxIndexToWait ] = taskWAITING_NOTIFICATION;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4733): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4733 |             ulReturn = pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ];
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4739): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4739 |                     pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ] = 0UL;
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4743): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4743 |                     pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ] = ulReturn - ( uint32_t ) 1;
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4751): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4751 |             pxCurrentTCB->ucNotifyState[ uxIndexToWait ] = taskNOT_WAITING_NOTIFICATION;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4776): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4776 |             if( pxCurrentTCB->ucNotifyState[ uxIndexToWait ] != taskNOTIFICATION_RECEIVED )
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4781): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4781 |                 pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ] &= ~ulBitsToClearOnEntry;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4784): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4784 |                 pxCurrentTCB->ucNotifyState[ uxIndexToWait ] = taskWAITING_NOTIFICATION;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4817): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4817 |                 *pulNotificationValue = pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ];
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4824): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4824 |             if( pxCurrentTCB->ucNotifyState[ uxIndexToWait ] != taskNOTIFICATION_RECEIVED )
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4833): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4833 |                 pxCurrentTCB->ulNotifiedValue[ uxIndexToWait ] &= ~ulBitsToClearOnExit;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4837): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4837 |             pxCurrentTCB->ucNotifyState[ uxIndexToWait ] = taskNOT_WAITING_NOTIFICATION;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4867): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4867 |                 *pulPreviousNotificationValue = pxTCB->ulNotifiedValue[ uxIndexToNotify ];
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4870): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4870 |             ucOriginalNotifyState = pxTCB->ucNotifyState[ uxIndexToNotify ];
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4872): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4872 |             pxTCB->ucNotifyState[ uxIndexToNotify ] = taskNOTIFICATION_RECEIVED;
+      |             ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4877): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4877 |                     pxTCB->ulNotifiedValue[ uxIndexToNotify ] |= ulValue;
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4881): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4881 |                     ( pxTCB->ulNotifiedValue[ uxIndexToNotify ] )++;
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4885): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4885 |                     pxTCB->ulNotifiedValue[ uxIndexToNotify ] = ulValue;
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4892): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4892 |                         pxTCB->ulNotifiedValue[ uxIndexToNotify ] = ulValue;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4925): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4925 |                 prvAddTaskToReadyList( pxTCB );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4925): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4925 |                 prvAddTaskToReadyList( pxTCB );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(4925): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 4925 |                 prvAddTaskToReadyList( pxTCB );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5011): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5011 |                 *pulPreviousNotificationValue = pxTCB->ulNotifiedValue[ uxIndexToNotify ];
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5014): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5014 |             ucOriginalNotifyState = pxTCB->ucNotifyState[ uxIndexToNotify ];
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5015): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5015 |             pxTCB->ucNotifyState[ uxIndexToNotify ] = taskNOTIFICATION_RECEIVED;
+      |             ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5020): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5020 |                     pxTCB->ulNotifiedValue[ uxIndexToNotify ] |= ulValue;
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5024): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5024 |                     ( pxTCB->ulNotifiedValue[ uxIndexToNotify ] )++;
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5028): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5028 |                     pxTCB->ulNotifiedValue[ uxIndexToNotify ] = ulValue;
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5035): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5035 |                         pxTCB->ulNotifiedValue[ uxIndexToNotify ] = ulValue;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5072): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5072 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5072): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5072 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5072): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5072 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5144): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5144 |             ucOriginalNotifyState = pxTCB->ucNotifyState[ uxIndexToNotify ];
+      |                                     ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5145): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5145 |             pxTCB->ucNotifyState[ uxIndexToNotify ] = taskNOTIFICATION_RECEIVED;
+      |             ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5149): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5149 |             ( pxTCB->ulNotifiedValue[ uxIndexToNotify ] )++;
+      |               ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5163): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5163 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(356): note: expanded from macro 'listINSERT_END'
+  356 |         ListItem_t * const pxIndex = ( pxList )->pxIndex; \
+      |                                        ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5163): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5163 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(374): note: expanded from macro 'listINSERT_END'
+  374 |         ( pxNewListItem )->pxContainer = ( pxList );         \
+      |                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5163): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5163 |                     prvAddTaskToReadyList( pxTCB );
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(224): note: expanded from macro 'prvAddTaskToReadyList'
+  224 |     listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+      |                        ^~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include/list.h(376): note: expanded from macro 'listINSERT_END'
+  376 |         ( ( pxList )->uxNumberOfItems )++;                   \
+      |             ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5214): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5214 |             if( pxTCB->ucNotifyState[ uxIndexToClear ] == taskNOTIFICATION_RECEIVED )
+      |                 ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5216): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5216 |                 pxTCB->ucNotifyState[ uxIndexToClear ] = taskNOT_WAITING_NOTIFICATION;
+      |                 ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5249): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5249 |             ulReturn = pxTCB->ulNotifiedValue[ uxIndexToClear ];
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5250): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 5250 |             pxTCB->ulNotifiedValue[ uxIndexToClear ] &= ~ulBitsToClear;
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+222 warnings generated.
+compiling tasks.c...
+linking...
+Program Size: Code=12830 RO-data=686 RW-data=8 ZI-data=9160  
+".\Objects\project.axf" - 0 Error(s), 402 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS-FreeRTOS.10.5.1.pack
+                ARM::CMSIS-FreeRTOS@10.5.1
+                Bundle of FreeRTOS for Cortex-M and Cortex-A
+   * Component: Config Variant: FreeRTOS Version: 10.5.1
+   * Component: Core Variant: Cortex-M Version: 10.5.1
+   * Component: Heap Variant: Heap_1 Version: 10.5.1
+   * Component: Timers Version: 10.5.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/RTOS
+  ./RTE/_Target_1
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/CMSIS/RTOS2/FreeRTOS/Include
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F
+  C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: ARM::RTOS&FreeRTOS:Config&FreeRTOS@10.5.1
+      Include file:  Config/ARMCM/FreeRTOSConfig.h
+
+   * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@10.5.1
+      Include file:  Source/include/task.h
+      Include file:  Source/include/queue.h
+      Source file:   Source/list.c
+      Include file:  Source/include/FreeRTOS.h
+      Include file:  Source/include/semphr.h
+      Source file:   Source/queue.c
+      Source file:   Source/tasks.c
+      Source file:   Source/portable/GCC/ARM_CM4F/port.c
+      Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
+
+   * Component: ARM::RTOS&FreeRTOS:Heap&Heap_1@10.5.1
+      Source file:   Source/portable/MemMang/heap_1.c
+
+   * Component: ARM::RTOS&FreeRTOS:Timers@10.5.1
+      Include file:  Source/include/timers.h
+      Source file:   Source/timers.c
+
+   * Component: Keil::Device:Startup@1.0.1
+      Include file:  Device/Include/TM4C123/TM4C123.h
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Source file:   Device/Source/system_TM4C123.c
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>

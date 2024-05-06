@@ -5,151 +5,125 @@
 #include "tm4c123gh6pm.h"
 #include "DIO.h"
 #include "queue.h"
+#include "timers.h"
 
-int cntr = 0;
+void timer0Init(void);
+void timer0_Delay(int time);
+
+short lastDirection = 0; // directions are -1, 0, 1
 QueueHandle_t xQueue;
 
 // TODO: make queues for message passing that if the passenger or driver wanted to use the MotorDriver
 // the MotorDriver will listen for the messages and execute them accordingly
 
-// Define variables
-volatile bool buttonPressed = false;
+volatile char buttonPressed = 0;
 volatile TickType_t buttonPressStartTime = 0;
 
-// Task for Button Monitoring
-void buttonTask(void *pvParameters)
+int Button_Pressed(void)
 {
-	while (1)
-	{
-		// Check button state
-		if (buttonIsPressed())
-		{
-			if (!buttonPressed)
-			{
-				// Button has been pressed
-				buttonPressed = true;
-				buttonPressStartTime = xTaskGetTickCount(); // Record start time
-			}
-		}
-		else
-		{
-			// Button released
-			buttonPressed = false;
-		}
-		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
-	}
-}
-
-// Timer callback function
-void buttonTimerCallback(TimerHandle_t xTimer)
-{
-	// Check if button has been pressed for more than 1 second
-	int currentTime = xTaskGetTickCount();
-	if (buttonPressed && (currentTime - buttonPressStartTime >= pdMS_TO_TICKS(1000)))
-	{
-		// Button has been pressed for more than 1 second
-		// send queue message raise up
-	}
-	else if (buttonPressed && (currentTime - buttonPressStartTime < pdMS_TO_TICKS(1000)))
-	{
-		// Button pressed for less than 1 second
-		// send queue message auto roll
-	}
-}
-
-// Task for Timer Management
-void timerTask(void *pvParameters)
-{
-	TimerHandle_t buttonTimer = xTimerCreate("ButtonTimer", pdMS_TO_TICKS(100), pdFALSE, 0, buttonTimerCallback);
-	if (buttonTimer != NULL)
-	{
-		while (1)
-		{
-			// Start or stop the timer based on button state
-			if (buttonPressed)
-			{
-				xTimerStart(buttonTimer, 0);
-			}
-			else
-			{
-				xTimerStop(buttonTimer, 0);
-			}
-			vTaskDelay(pdMS_TO_TICKS(100)); // Check timer every 100ms
-		}
-	}
-}
-
-void raiseUp()
-{
-	
+	return !(GPIO_PORTF_DATA_R & 0x01); // Return 1 if button is pressed (active low)
 }
 
 void MotorDriver(int direction)
 {
-	// listen for queue instructions
-	static int semaphore;
-	semaphore++;
-	if (semaphore == 1)
+	int rcvCntr;
+	if (xQueueReceive(xQueue, &rcvCntr, portMAX_DELAY))
 	{
-		if (direction)
+		if (lastDirection == 1 && rcvCntr == -1)
 		{
-			// raise up
+			lastDirection = 0;
+			// stop motion
 		}
-		else
+		else if (lastDirection == -1 && rcvCntr == 1)
 		{
-			// lower down
+			lastDirection = 0;
+			// stop motion
+		}
+		if (rcvCntr == 0)
+		{
+			lastDirection = 1;
+			// auto roll up
+		}
+		else if (rcvCntr == 1)
+		{
+			// manual up
+		}
+		else if (rcvCntr == 2)
+		{
+			lastDirection = -1;
+			// auto roll down
+		}
+		else if (rcvCntr == 3)
+		{
+			// manual down
 		}
 	}
-	else
-	{
-		// pass
-	}
-	semaphore--;
-}
-
-void AutoUp()
-{
-	// how to detect limit switch is fired
 }
 
 void PassengerListner(void *pvParameters)
 {
-	int btn1State;
 	while (1)
 	{
-		btn1State = GPIO_PORTF_DATA_R & (1 << 0);
-		if (btn1State == 0)
-		{ // Assuming active-low button
-			GPIO_PORTF_DATA_R |= 0x02;
-			// raise window
-			// or use semaphores
-
-			vTaskDelay(100 / portTICK_PERIOD_MS); // Debounce delay
-		}
-		else
+		int cntr = 0;
+		if (Button_Pressed())
 		{
-			GPIO_PORTF_DATA_R &= ~0x02;
-			// lower window
+
+			timer0_Delay(5000);
+
+			if (Button_Pressed())
+			{
+				// Turn on one LED, turn off the other
+				cntr = 1;
+				xQueueSend(xQueue, &cntr, portMAX_DELAY);
+			}
+			else
+			{
+				// TODO: make variable that listens if the button is still pressed after long press
+				cntr = 0;
+				xQueueSend(xQueue, &cntr, portMAX_DELAY);
+			}
+
+			timer0_Delay(10000);
 		}
+		// reset leds, may be helpful in jamming
+		GPIO_PORTF_DATA_R &= ~(1 << 1);
+		GPIO_PORTF_DATA_R &= ~(1 << 2);
+
+		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
 }
 
 void DriverListner(void *pvParameters)
 {
+	// TODO: add lock
 	while (1)
 	{
-		int btn2State = GPIO_PORTF_DATA_R & (1 << 4);
-		if (btn2State == 0)
+		int cntr = 0;
+		if (Button_Pressed())
 		{
-			GPIO_PORTF_DATA_R = 0x04;
-			//
 
-			vTaskDelay(500 / portTICK_PERIOD_MS); // Debounce delay
+			timer0_Delay(5000);
+
+			if (Button_Pressed())
+			{
+				// Turn on one LED, turn off the other
+				cntr = 1;
+				xQueueSend(xQueue, &cntr, portMAX_DELAY);
+			}
+			else
+			{
+				// TODO: make variable that listens if the button is still pressed after long press
+				cntr = 0;
+				xQueueSend(xQueue, &cntr, portMAX_DELAY);
+			}
+
+			timer0_Delay(10000);
 		}
-		else
-		{
-			GPIO_PORTF_DATA_R &= ~(0x04);
-		}
+		// reset leds, may be helpful in jamming
+		GPIO_PORTF_DATA_R &= ~(1 << 1);
+		GPIO_PORTF_DATA_R &= ~(1 << 2);
+
+		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
 }
 
@@ -157,6 +131,7 @@ void LimitSwitchListner()
 {
 	while (1)
 	{
+		int cntr = 0;
 		int upState = GPIO_PORTF_DATA_R & (1 << 4);	  // get from gpio
 		int downState = GPIO_PORTF_DATA_R & (1 << 4); // get from gpio
 		int objectDetected = GPIO_PORTF_DATA_R & (1 << 4);
@@ -164,9 +139,13 @@ void LimitSwitchListner()
 		{
 			if (objectDetected == 0)
 			{
-				while (true)
+				while (1)
 				{
 					// lower down
+					cntr = 1;
+					if (xQueueSend(xQueue, &cntr, portMAX_DELAY) == pdPASS)
+					{
+					}
 				}
 			}
 			else
@@ -174,31 +153,12 @@ void LimitSwitchListner()
 				// operation is done
 			}
 		}
-		elif (downState == 0)
+		else if (downState == 0)
 		{
 			// operation is done
 		}
 		else
 		{
-			taskYield();
-		}
-	}
-}
-
-void Task3(void *pvParameters)
-{
-	int rcvCntr;
-	while (1)
-	{
-		if (xQueueReceive(xQueue, &rcvCntr, portMAX_DELAY))
-		{
-			// printf("Entered here");
-			char final_message[20];
-			sprintf(final_message, "Recieved: %d\n", cntr);
-			cntr = 0;
-			UART_Write_String(final_message); // put rcvcntr
-			xQueueReset(xQueue);
-			taskYIELD();
 		}
 	}
 }
@@ -216,6 +176,15 @@ void psh_btn_init()
 
 void Init()
 {
+	psh_btn_init();
+	timer0Init();
+}
+
+// Timer callback function
+void timerCallback(TimerHandle_t xTimer)
+{
+	// Timer expired, perform actions here
+	GPIO_PORTF_DATA_R ^= 0x02;
 }
 
 int main()
@@ -225,13 +194,30 @@ int main()
 
 	// xTaskCreate(PassengerListner, "PB1", 200, NULL, 1, NULL);
 	// xTaskCreate(DriverListner, "PB2", 200, NULL, 1, NULL);
-	// xTaskCreate(Task3, "Uart0", 200, NULL, 1, NULL);
 
-	xTaskCreate(buttonTask, "ButtonTask", 200, NULL, 2, NULL);
-	xTaskCreate(timerTask, "TimerTask", 200, NULL, 2, NULL);
+	xTaskCreate(PassengerListner, "ButtonTask", 200, NULL, 2, NULL);
+	xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
 
 	vTaskStartScheduler();
 
 	for (;;)
+		;
+}
+
+void timer0Init(void)
+{
+	SYSCTL_RCGCTIMER_R |= 0x01;
+	TIMER0_CTL_R = 0x00;
+	TIMER0_CFG_R = 0x00;
+	TIMER0_TAMR_R = 0x02;
+	TIMER0_CTL_R = 0x03;
+}
+void timer0_Delay(int time)
+{
+	TIMER0_CTL_R = 0x00;
+	TIMER0_TAILR_R = 16000 * time - 1;
+	TIMER0_ICR_R = 0x01;
+	TIMER0_CTL_R |= 0x03;
+	while ((TIMER0_RIS_R & 0x01) == 0)
 		;
 }
