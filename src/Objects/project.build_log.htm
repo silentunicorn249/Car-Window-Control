@@ -28,6 +28,157 @@ Project File Date:  05/06/2024
 *** Using Compiler 'V6.21', folder: 'D:\programs\Keil5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
 compiling freertos_evr.c...
+main.c(3): warning: non-portable path to file '<FreeRTOS.h>'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+    3 | #include <freertos.h>
+      |          ^~~~~~~~~~~~
+      |          <FreeRTOS.h>
+main.c(6): warning: In file included from...
+./DIO.h(16): warning: no newline at end of file [-Wnewline-eof]
+   16 | #define LOW 0
+      |              ^
+main.c(13): warning: no previous extern declaration for non-static variable 'lastDirection' [-Wmissing-variable-declarations]
+   13 | short lastDirection = 0; // directions are -1, 0, 1
+      |       ^
+main.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   13 | short lastDirection = 0; // directions are -1, 0, 1
+      | ^
+main.c(19): warning: no previous extern declaration for non-static variable 'buttonPressed' [-Wmissing-variable-declarations]
+   19 | volatile char buttonPressed = 0;
+      |               ^
+main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   19 | volatile char buttonPressed = 0;
+      |          ^
+main.c(20): warning: no previous extern declaration for non-static variable 'buttonPressStartTime' [-Wmissing-variable-declarations]
+   20 | volatile TickType_t buttonPressStartTime = 0;
+      |                     ^
+main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   20 | volatile TickType_t buttonPressStartTime = 0;
+      |          ^
+main.c(22): warning: no previous prototype for function 'Button_Pressed' [-Wmissing-prototypes]
+   22 | int Button_Pressed(void)
+      |     ^
+main.c(22): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   22 | int Button_Pressed(void)
+      | ^
+      | static 
+main.c(27): warning: unused parameter 'direction' [-Wunused-parameter]
+   27 | void MotorDriver(int direction)
+      |                      ^
+main.c(27): warning: no previous prototype for function 'MotorDriver' [-Wmissing-prototypes]
+   27 | void MotorDriver(int direction)
+      |      ^
+main.c(27): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   27 | void MotorDriver(int direction)
+      | ^
+      | static 
+main.c(28): warning: function 'MotorDriver' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+   28 | {
+      | ^
+main.c(67): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+   67 | void PassengerListner(void *pvParameters)
+      |                             ^
+main.c(67): warning: no previous prototype for function 'PassengerListner' [-Wmissing-prototypes]
+   67 | void PassengerListner(void *pvParameters)
+      |      ^
+main.c(67): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   67 | void PassengerListner(void *pvParameters)
+      | ^
+      | static 
+main.c(68): warning: function 'PassengerListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+   68 | {
+      | ^
+main.c(127): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  127 |                 GPIO_PORTF_DATA_R &= ~(1 << 1);
+      |                                   ~~ ^~~~~~~~~
+main.c(128): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  128 |                 GPIO_PORTF_DATA_R &= ~(1 << 2);
+      |                                   ~~ ^~~~~~~~~
+main.c(100): warning: unused parameter 'pvParameters' [-Wunused-parameter]
+  100 | void DriverListner(void *pvParameters)
+      |                          ^
+main.c(100): warning: no previous prototype for function 'DriverListner' [-Wmissing-prototypes]
+  100 | void DriverListner(void *pvParameters)
+      |      ^
+main.c(100): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  100 | void DriverListner(void *pvParameters)
+      | ^
+      | static 
+main.c(101): warning: function 'DriverListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  101 | {
+      | ^
+main.c(134): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  134 | void LimitSwitchListner()
+      |                        ^
+      |                         void
+main.c(134): warning: no previous prototype for function 'LimitSwitchListner' [-Wmissing-prototypes]
+  134 | void LimitSwitchListner()
+      |      ^
+main.c(134): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  134 | void LimitSwitchListner()
+      | ^
+      | static 
+main.c(135): warning: function 'LimitSwitchListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  135 | {
+      | ^
+main.c(170): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  170 | void psh_btn_init()
+      |                  ^
+      |                   void
+main.c(175): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  175 |         GPIO_PORTF_DIR_R &= ~0x11; // PF0 as input
+      |                          ~~ ^~~~~
+main.c(170): warning: no previous prototype for function 'psh_btn_init' [-Wmissing-prototypes]
+  170 | void psh_btn_init()
+      |      ^
+main.c(170): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  170 | void psh_btn_init()
+      | ^
+      | static 
+main.c(181): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  181 | void Init()
+      |          ^
+      |           void
+main.c(181): warning: no previous prototype for function 'Init' [-Wmissing-prototypes]
+  181 | void Init()
+      |      ^
+main.c(181): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  181 | void Init()
+      | ^
+      | static 
+main.c(188): warning: unused parameter 'xTimer' [-Wunused-parameter]
+  188 | void timerCallback(TimerHandle_t xTimer)
+      |                                  ^
+main.c(188): warning: no previous prototype for function 'timerCallback' [-Wmissing-prototypes]
+  188 | void timerCallback(TimerHandle_t xTimer)
+      |      ^
+main.c(188): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  188 | void timerCallback(TimerHandle_t xTimer)
+      | ^
+      | static 
+main.c(194): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  194 | int main()
+      |         ^
+      |          void
+main.c(203): warning: incompatible function pointer types passing 'void (int)' to parameter of type 'TaskFunction_t' (aka 'void (*)(void *)') [-Wincompatible-function-pointer-types-strict]
+  203 |         xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
+      |                     ^~~~~~~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include\task.h(355): note: passing argument to parameter 'pxTaskCode' here
+  355 |     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+      |                                            ^
+main.c(222): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  222 |         TIMER0_TAILR_R = 16000 * time - 1;
+      |                        ~ ~~~~~~~~~~~~~^~~
+main.c(227): warning: no newline at end of file [-Wnewline-eof]
+  227 | }
+      |  ^
+main.c(14): warning: no previous extern declaration for non-static variable 'xQueue' [-Wmissing-variable-declarations]
+   14 | QueueHandle_t xQueue;
+      |               ^
+main.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   14 | QueueHandle_t xQueue;
+      | ^
+32 warnings generated.
+compiling main.c...
 C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/GCC/ARM_CM4F/port.c(234): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
   234 |     configASSERT( uxCriticalNesting == ~0UL );
       |                                              ^
@@ -84,19 +235,6 @@ C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/
       |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 18 warnings generated.
 compiling port.c...
-compiling list.c...
-C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(138): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-  138 |     configASSERT( pv == NULL );
-      |                               ^
-C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(99): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-   99 |             pucAlignedHeap = ( uint8_t * ) ( ( ( portPOINTER_SIZE_TYPE ) & ucHeap[ portBYTE_ALIGNMENT - 1 ] ) & ( ~( ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) ) );
-      |                                                                            ^~~~~~
-C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(109): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  109 |             pvReturn = pucAlignedHeap + xNextFreeByte;
-      |                        ^~~~~~~~~~~~~~
-3 warnings generated.
-compiling heap_1.c...
-assembling startup_TM4C123.s...
 RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
 C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
 C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
@@ -233,160 +371,19 @@ C:/Users/Mark/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
       |   ^
 44 warnings generated.
 compiling system_TM4C123.c...
-main.c(3): warning: non-portable path to file '<FreeRTOS.h>'; specified path differs in case from file name on disk [-Wnonportable-include-path]
-    3 | #include <freertos.h>
-      |          ^~~~~~~~~~~~
-      |          <FreeRTOS.h>
-main.c(6): warning: In file included from...
-./DIO.h(16): warning: no newline at end of file [-Wnewline-eof]
-   16 | #define LOW 0
-      |              ^
-main.c(13): warning: no previous extern declaration for non-static variable 'lastDirection' [-Wmissing-variable-declarations]
-   13 | short lastDirection = 0; // directions are -1, 0, 1
-      |       ^
-main.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-   13 | short lastDirection = 0; // directions are -1, 0, 1
-      | ^
-main.c(19): warning: no previous extern declaration for non-static variable 'buttonPressed' [-Wmissing-variable-declarations]
-   19 | volatile char buttonPressed = 0;
-      |               ^
-main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-   19 | volatile char buttonPressed = 0;
-      |          ^
-main.c(20): warning: no previous extern declaration for non-static variable 'buttonPressStartTime' [-Wmissing-variable-declarations]
-   20 | volatile TickType_t buttonPressStartTime = 0;
-      |                     ^
-main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-   20 | volatile TickType_t buttonPressStartTime = 0;
-      |          ^
-main.c(22): warning: no previous prototype for function 'Button_Pressed' [-Wmissing-prototypes]
-   22 | int Button_Pressed(void)
-      |     ^
-main.c(22): note: declare 'static' if the function is not intended to be used outside of this translation unit
-   22 | int Button_Pressed(void)
-      | ^
-      | static 
-main.c(27): warning: unused parameter 'direction' [-Wunused-parameter]
-   27 | void MotorDriver(int direction)
-      |                      ^
-main.c(27): warning: no previous prototype for function 'MotorDriver' [-Wmissing-prototypes]
-   27 | void MotorDriver(int direction)
-      |      ^
-main.c(27): note: declare 'static' if the function is not intended to be used outside of this translation unit
-   27 | void MotorDriver(int direction)
-      | ^
-      | static 
-main.c(89): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-   89 |                 GPIO_PORTF_DATA_R &= ~(1 << 1);
-      |                                   ~~ ^~~~~~~~~
-main.c(90): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-   90 |                 GPIO_PORTF_DATA_R &= ~(1 << 2);
-      |                                   ~~ ^~~~~~~~~
-main.c(63): warning: unused parameter 'pvParameters' [-Wunused-parameter]
-   63 | void PassengerListner(void *pvParameters)
-      |                             ^
-main.c(63): warning: no previous prototype for function 'PassengerListner' [-Wmissing-prototypes]
-   63 | void PassengerListner(void *pvParameters)
-      |      ^
-main.c(63): note: declare 'static' if the function is not intended to be used outside of this translation unit
-   63 | void PassengerListner(void *pvParameters)
-      | ^
-      | static 
-main.c(64): warning: function 'PassengerListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-   64 | {
-      | ^
-main.c(123): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-  123 |                 GPIO_PORTF_DATA_R &= ~(1 << 1);
-      |                                   ~~ ^~~~~~~~~
-main.c(124): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-  124 |                 GPIO_PORTF_DATA_R &= ~(1 << 2);
-      |                                   ~~ ^~~~~~~~~
-main.c(96): warning: unused parameter 'pvParameters' [-Wunused-parameter]
-   96 | void DriverListner(void *pvParameters)
-      |                          ^
-main.c(96): warning: no previous prototype for function 'DriverListner' [-Wmissing-prototypes]
-   96 | void DriverListner(void *pvParameters)
-      |      ^
-main.c(96): note: declare 'static' if the function is not intended to be used outside of this translation unit
-   96 | void DriverListner(void *pvParameters)
-      | ^
-      | static 
-main.c(97): warning: function 'DriverListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-   97 | {
-      | ^
-main.c(130): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-  130 | void LimitSwitchListner()
-      |                        ^
-      |                         void
-main.c(130): warning: no previous prototype for function 'LimitSwitchListner' [-Wmissing-prototypes]
-  130 | void LimitSwitchListner()
-      |      ^
-main.c(130): note: declare 'static' if the function is not intended to be used outside of this translation unit
-  130 | void LimitSwitchListner()
-      | ^
-      | static 
-main.c(131): warning: function 'LimitSwitchListner' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-  131 | {
-      | ^
-main.c(166): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-  166 | void psh_btn_init()
-      |                  ^
-      |                   void
-main.c(171): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-  171 |         GPIO_PORTF_DIR_R &= ~0x11; // PF0 as input
-      |                          ~~ ^~~~~
-main.c(166): warning: no previous prototype for function 'psh_btn_init' [-Wmissing-prototypes]
-  166 | void psh_btn_init()
-      |      ^
-main.c(166): note: declare 'static' if the function is not intended to be used outside of this translation unit
-  166 | void psh_btn_init()
-      | ^
-      | static 
-main.c(177): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-  177 | void Init()
-      |          ^
-      |           void
-main.c(177): warning: no previous prototype for function 'Init' [-Wmissing-prototypes]
-  177 | void Init()
-      |      ^
-main.c(177): note: declare 'static' if the function is not intended to be used outside of this translation unit
-  177 | void Init()
-      | ^
-      | static 
-main.c(184): warning: unused parameter 'xTimer' [-Wunused-parameter]
-  184 | void timerCallback(TimerHandle_t xTimer)
-      |                                  ^
-main.c(184): warning: no previous prototype for function 'timerCallback' [-Wmissing-prototypes]
-  184 | void timerCallback(TimerHandle_t xTimer)
-      |      ^
-main.c(184): note: declare 'static' if the function is not intended to be used outside of this translation unit
-  184 | void timerCallback(TimerHandle_t xTimer)
-      | ^
-      | static 
-main.c(190): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
-  190 | int main()
-      |         ^
-      |          void
-main.c(199): warning: incompatible function pointer types passing 'void (int)' to parameter of type 'TaskFunction_t' (aka 'void (*)(void *)') [-Wincompatible-function-pointer-types-strict]
-  199 |         xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
-      |                     ^~~~~~~~~~~
-C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/include\task.h(355): note: passing argument to parameter 'pxTaskCode' here
-  355 |     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                                            ^
-main.c(218): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-  218 |         TIMER0_TAILR_R = 16000 * time - 1;
-      |                        ~ ~~~~~~~~~~~~~^~~
-main.c(223): warning: no newline at end of file [-Wnewline-eof]
-  223 | }
-      |  ^
-main.c(14): warning: no previous extern declaration for non-static variable 'xQueue' [-Wmissing-variable-declarations]
-   14 | QueueHandle_t xQueue;
-      |               ^
-main.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-   14 | QueueHandle_t xQueue;
-      | ^
-33 warnings generated.
-compiling main.c...
+compiling list.c...
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(138): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  138 |     configASSERT( pv == NULL );
+      |                               ^
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(99): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   99 |             pucAlignedHeap = ( uint8_t * ) ( ( ( portPOINTER_SIZE_TYPE ) & ucHeap[ portBYTE_ALIGNMENT - 1 ] ) & ( ~( ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) ) );
+      |                                                                            ^~~~~~
+C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/portable/MemMang/heap_1.c(109): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  109 |             pvReturn = pucAlignedHeap + xNextFreeByte;
+      |                        ^~~~~~~~~~~~~~
+3 warnings generated.
+compiling heap_1.c...
+assembling startup_TM4C123.s...
 C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/queue.c(302): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
   302 |     configASSERT( pxQueue );
       |                            ^
@@ -1628,8 +1625,8 @@ C:/Users/Mark/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/10.5.1/Source/tasks.c(5
 222 warnings generated.
 compiling tasks.c...
 linking...
-Program Size: Code=12830 RO-data=686 RW-data=8 ZI-data=9160  
-".\Objects\project.axf" - 0 Error(s), 402 Warning(s).
+Program Size: Code=12826 RO-data=686 RW-data=8 ZI-data=9160  
+".\Objects\project.axf" - 0 Error(s), 401 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -1671,14 +1668,14 @@ Package Vendor: Keil
       Include file:  Config/ARMCM/FreeRTOSConfig.h
 
    * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@10.5.1
-      Include file:  Source/include/task.h
+      Include file:  Source/include/FreeRTOS.h
       Include file:  Source/include/queue.h
       Source file:   Source/list.c
-      Include file:  Source/include/FreeRTOS.h
-      Include file:  Source/include/semphr.h
       Source file:   Source/queue.c
-      Source file:   Source/tasks.c
+      Include file:  Source/include/semphr.h
+      Include file:  Source/include/task.h
       Source file:   Source/portable/GCC/ARM_CM4F/port.c
+      Source file:   Source/tasks.c
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
 
    * Component: ARM::RTOS&FreeRTOS:Heap&Heap_1@10.5.1
@@ -1689,10 +1686,10 @@ Package Vendor: Keil
       Source file:   Source/timers.c
 
    * Component: Keil::Device:Startup@1.0.1
-      Include file:  Device/Include/TM4C123/TM4C123.h
       Source file:   Device/Source/ARM/startup_TM4C123.s
+      Include file:  Device/Include/TM4C123/TM4C123.h
       Source file:   Device/Source/system_TM4C123.c
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

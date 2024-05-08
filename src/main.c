@@ -26,6 +26,7 @@ int Button_Pressed(void)
 
 void MotorDriver(int direction)
 {
+	while (1){
 	int rcvCntr;
 	if (xQueueReceive(xQueue, &rcvCntr, portMAX_DELAY))
 	{
@@ -39,14 +40,16 @@ void MotorDriver(int direction)
 			lastDirection = 0;
 			// stop motion
 		}
-		if (rcvCntr == 0)
+   		if (rcvCntr == 0)
 		{
 			lastDirection = 1;
+			GPIO_PORTF_DATA_R |= (1 << 1);
 			// auto roll up
 		}
 		else if (rcvCntr == 1)
 		{
 			// manual up
+			GPIO_PORTF_DATA_R |= (1 << 2);
 		}
 		else if (rcvCntr == 2)
 		{
@@ -58,6 +61,7 @@ void MotorDriver(int direction)
 			// manual down
 		}
 	}
+}
 }
 
 void PassengerListner(void *pvParameters)
@@ -86,8 +90,8 @@ void PassengerListner(void *pvParameters)
 			timer0_Delay(10000);
 		}
 		// reset leds, may be helpful in jamming
-		GPIO_PORTF_DATA_R &= ~(1 << 1);
-		GPIO_PORTF_DATA_R &= ~(1 << 2);
+		//GPIO_PORTF_DATA_R &= ~(1 << 1);
+		//GPIO_PORTF_DATA_R &= ~(1 << 2);
 
 		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
@@ -195,7 +199,7 @@ int main()
 	// xTaskCreate(PassengerListner, "PB1", 200, NULL, 1, NULL);
 	// xTaskCreate(DriverListner, "PB2", 200, NULL, 1, NULL);
 
-	xTaskCreate(PassengerListner, "ButtonTask", 200, NULL, 2, NULL);
+	xTaskCreate(PassengerListner, "ButtonTask", 200, NULL, 1, NULL);
 	xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
 
 	vTaskStartScheduler();
