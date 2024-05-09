@@ -1,16 +1,37 @@
-void DIO_Init(int PORT_NO);
-//void DIO_WritePin();
-//void DIO_WritePort();
-void DIO_WritePin(unsigned int Pin, int PORT_NO ,int value);
-void DIO_WritePort(int PORT_NO ,int value);
-int DIO_ReadPin(unsigned int Pin,int PORT_NO);
-int DIO_ReadPort(unsigned int *  volatile Port);
- 
-#define PORTF 6
-#define PORTE 5
-#define PORTD 4
-#define PORTC 3
-#define PORTB 2
-#define PORTA 1
-#define HIGH 1
-#define LOW 0
+#ifndef DIO_H_
+#define DIO_H_
+#include "tm4c123gh6pm.h"
+#include "std_types.h"
+// PORTs Names:
+#define PORTA 0
+#define PORTB 1
+#define PORTC 2
+#define PORTD 3
+#define PORTE 4
+#define PORTF 5
+
+// PINs Names:
+#define PIN0 0
+#define PIN1 1
+#define PIN2 2
+#define PIN3 3
+#define PIN4 4
+#define PIN5 5
+#define PIN6 6
+#define PIN7 7
+
+typedef uint32 Dio_PortType;
+typedef uint32_ptr Dio_PortType_ptr;
+typedef uint8 Dio_PinType;
+typedef uint8 Dio_PinDirectionType;
+typedef uint8 Dio_ValueType;
+
+void DIO_Init(Dio_PortType port_name);
+
+void DIO_DIR(Dio_PortType port_name, Dio_PinType pin_num, Dio_PinDirectionType direction);
+
+void DIO_WritePin(Dio_PortType port_name, Dio_PinType pin_num, Dio_ValueType value);
+
+void DIO_WritePort(Dio_PortType port_name, Dio_ValueType value);
+void DIO_togglepin(Dio_PortType port_name, Dio_PinType pin_num);
+#endif

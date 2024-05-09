@@ -6,12 +6,16 @@
 #include "DIO.h"
 #include "queue.h"
 #include "timers.h"
+#include <semphr.h>
+
+xSemaphoreHandle xLockSemaphore;
 
 void timer0Init(void);
 void timer0_Delay(int time);
 
 short lastDirection = 0; // directions are -1, 0, 1
 QueueHandle_t xQueue;
+TaskHandle_t DriverHandle;
 
 // TODO: make queues for message passing that if the passenger or driver wanted to use the MotorDriver
 // the MotorDriver will listen for the messages and execute them accordingly
@@ -19,49 +23,107 @@ QueueHandle_t xQueue;
 volatile char buttonPressed = 0;
 volatile TickType_t buttonPressStartTime = 0;
 
+int Button_Pressed2(void)
+{
+	return !(GPIO_PORTF_DATA_R & 0x10); // Return 1 if button is pressed (active low)
+}
 int Button_Pressed(void)
 {
 	return !(GPIO_PORTF_DATA_R & 0x01); // Return 1 if button is pressed (active low)
 }
 
-void MotorDriver(int direction)
+int UpPressed(void)
 {
-	while (1){
-	int rcvCntr;
-	if (xQueueReceive(xQueue, &rcvCntr, portMAX_DELAY))
+	return !(GPIO_PORTA_DATA_R & (1 << 4)); // Return 1 if button is pressed (active low)
+}
+
+int DownPressed(void)
+{
+	return !(GPIO_PORTA_DATA_R & (1 << 3)); // Return 1 if button is pressed (active low)
+}
+
+static void lock(void *pvParameters)
+{
+	xSemaphoreTake(xLockSemaphore, 0);
+	while (1)
 	{
-		if (lastDirection == 1 && rcvCntr == -1)
+		// Take semaphore
+		xSemaphoreTake(xLockSemaphore, portMAX_DELAY);
+
+		// Check on Button State
+		if (Button_Pressed2())
 		{
-			lastDirection = 0;
-			// stop motion
+			GPIO_PORTF_DATA_R |= (1 << 3); // Turn RED LED ON for indication
+			vTaskDelay(pdMS_TO_TICKS(500));
 		}
-		else if (lastDirection == -1 && rcvCntr == 1)
+		else
 		{
-			lastDirection = 0;
-			// stop motion
+			GPIO_PORTF_DATA_R &= ~(1 << 3);
 		}
-   		if (rcvCntr == 0)
+		/*
+		else if(GET_BIT(GPIO_PORTA_DATA_R,3)==1)
 		{
-			lastDirection = 1;
-			GPIO_PORTF_DATA_R |= (1 << 1);
-			// auto roll up
+			GPIO_PORTF_DATA_R &= ~(1<<1); 		// Turn RED LED OFF for indication
+			vTaskPrioritySet(DriverHandle,1);	// CHange Driver Task Priority to 1
 		}
-		else if (rcvCntr == 1)
-		{
-			// manual up
-			GPIO_PORTF_DATA_R |= (1 << 2);
-		}
-		else if (rcvCntr == 2)
-		{
-			lastDirection = -1;
-			// auto roll down
-		}
-		else if (rcvCntr == 3)
-		{
-			// manual down
-		}
+		*/
+		// GPIO_PORTF_DATA_R &= ~(1<<3);
 	}
 }
+
+void MotorDriver()
+{
+	while (1)
+	{
+		int rcvCntr;
+		if (xQueueReceive(xQueue, &rcvCntr, portMAX_DELAY))
+		{
+			if (lastDirection == 1 && rcvCntr == 3)
+			{
+				rcvCntr = -1;
+				lastDirection = 0;
+				GPIO_PORTF_DATA_R = 0x0;
+				// stop motion
+			}
+			else if (lastDirection == -1 && rcvCntr == 1)
+			{
+				rcvCntr = -1;
+				lastDirection = 0;
+				GPIO_PORTF_DATA_R = 0x0;
+				// stop motion
+			}
+
+			if (lastDirection == 0 && rcvCntr != -1)
+			{
+
+				// manual
+				if (rcvCntr == 0)
+				{
+					GPIO_PORTF_DATA_R = (1 << 1);
+				}
+
+				// automatic up
+				else if (rcvCntr == 1)
+				{
+					lastDirection = 1;
+					GPIO_PORTF_DATA_R = (1 << 1);
+				}
+
+				// manual
+				else if (rcvCntr == 2)
+				{
+					GPIO_PORTF_DATA_R = (1 << 2);
+				}
+
+				// automatic down
+				else if (rcvCntr == 3)
+				{
+					lastDirection = -1;
+					GPIO_PORTF_DATA_R = (1 << 2);
+				}
+			}
+		}
+	}
 }
 
 void PassengerListner(void *pvParameters)
@@ -69,12 +131,12 @@ void PassengerListner(void *pvParameters)
 	while (1)
 	{
 		int cntr = 0;
-		if (Button_Pressed())
+		if (UpPressed())
 		{
 
-			timer0_Delay(5000);
+			vTaskDelay(pdMS_TO_TICKS(500));
 
-			if (Button_Pressed())
+			if (UpPressed())
 			{
 				// Turn on one LED, turn off the other
 				cntr = 1;
@@ -87,11 +149,12 @@ void PassengerListner(void *pvParameters)
 				xQueueSend(xQueue, &cntr, portMAX_DELAY);
 			}
 
-			timer0_Delay(10000);
+			// timer0_Delay(10000);
 		}
 		// reset leds, may be helpful in jamming
-		//GPIO_PORTF_DATA_R &= ~(1 << 1);
-		//GPIO_PORTF_DATA_R &= ~(1 << 2);
+		vTaskDelay(pdMS_TO_TICKS(1000));
+		GPIO_PORTF_DATA_R &= ~(1 << 1);
+		GPIO_PORTF_DATA_R &= ~(1 << 2);
 
 		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
@@ -103,29 +166,65 @@ void DriverListner(void *pvParameters)
 	while (1)
 	{
 		int cntr = 0;
-		if (Button_Pressed())
+		if (UpPressed())
 		{
 
-			timer0_Delay(5000);
+			vTaskDelay(pdMS_TO_TICKS(500));
 
-			if (Button_Pressed())
+			if (UpPressed())
 			{
 				// Turn on one LED, turn off the other
-				cntr = 1;
-				xQueueSend(xQueue, &cntr, portMAX_DELAY);
+
+				// manual
+				while (UpPressed())
+				{
+					GPIO_PORTF_DATA_R = (1 << 1);
+					// vTaskDelay(pdMS_TO_TICKS(5)); // to go to other tasks
+				}
+				GPIO_PORTF_DATA_R = 0;
+				// cntr = 0;
+				// xQueueSend(xQueue, &cntr, portMAX_DELAY);
 			}
 			else
 			{
-				// TODO: make variable that listens if the button is still pressed after long press
-				cntr = 0;
-				xQueueSend(xQueue, &cntr, portMAX_DELAY);
-			}
 
-			timer0_Delay(10000);
+				// automatic
+				cntr = 1;
+				xQueueSend(xQueue, &cntr, 0);
+			}
+			vTaskDelay(pdMS_TO_TICKS(500));
+		}
+		else if (DownPressed())
+		{
+
+			vTaskDelay(pdMS_TO_TICKS(500));
+
+			if (DownPressed())
+			{
+
+				// manual
+
+				while (DownPressed())
+				{
+					GPIO_PORTF_DATA_R = (1 << 2);
+					// vTaskDelay(pdMS_TO_TICKS(5)); // to go to other tasks
+				}
+				GPIO_PORTF_DATA_R = 0;
+
+				// cntr = 2;
+				// xQueueSend(xQueue, &cntr, portMAX_DELAY);
+			}
+			else
+			{
+				// automatic
+				cntr = 3;
+				xQueueSend(xQueue, &cntr, 0);
+			}
+			vTaskDelay(pdMS_TO_TICKS(500));
 		}
 		// reset leds, may be helpful in jamming
-		GPIO_PORTF_DATA_R &= ~(1 << 1);
-		GPIO_PORTF_DATA_R &= ~(1 << 2);
+		// GPIO_PORTF_DATA_R &= ~(1 << 1);
+		// GPIO_PORTF_DATA_R &= ~(1 << 2);
 
 		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
@@ -190,24 +289,70 @@ void timerCallback(TimerHandle_t xTimer)
 	// Timer expired, perform actions here
 	GPIO_PORTF_DATA_R ^= 0x02;
 }
+void INTERRUPTSInit(void);
 
+void GPIOF_Handler(void)
+{
+	portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
+	xSemaphoreGiveFromISR(xLockSemaphore, &xHigherPriorityTaskWoken);
+
+	if (GPIO_PORTF_RIS_R & 0x10)
+	{
+		// Clear the interrupt immediately
+		GPIO_PORTF_ICR_R = 0x10; // Writing a '1' to the 4th bit
+
+		// Handle the interrupt event, e.g., give a semaphore
+	}
+
+	// Check if a context switch is required following the ISR
+	portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
+}
 int main()
 {
-	Init();
-	xQueue = xQueueCreate(10, sizeof(uint32_t));
+	DIO_Init(PORTF);
+	DIO_DIR(PORTF, 1, OUTPUT);
+	DIO_DIR(PORTF, 2, OUTPUT);
+	DIO_DIR(PORTF, 3, OUTPUT);
+	DIO_DIR(PORTF, PIN4, INPUT);
+	DIO_DIR(PORTF, PIN0, INPUT);
 
+	DIO_Init(PORTA);
+	DIO_DIR(PORTA, PIN3, INPUT);
+	DIO_DIR(PORTA, PIN4, INPUT);
+
+	INTERRUPTSInit();
+	vSemaphoreCreateBinary(xLockSemaphore);
+	xQueue = xQueueCreate(10, sizeof(uint32_t));
+	__asm("CPSIE i");
 	// xTaskCreate(PassengerListner, "PB1", 200, NULL, 1, NULL);
 	// xTaskCreate(DriverListner, "PB2", 200, NULL, 1, NULL);
+	if (xLockSemaphore != NULL)
+	{
+		xTaskCreate(lock, "lock", 200, NULL, 4, NULL);
+		xTaskCreate(DriverListner, "Driver", 200, NULL, 1, &DriverHandle);
+		xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
 
-	xTaskCreate(PassengerListner, "ButtonTask", 200, NULL, 1, NULL);
-	xTaskCreate(MotorDriver, "Motor", 200, NULL, 2, NULL);
-
-	vTaskStartScheduler();
+		vTaskStartScheduler();
+	}
 
 	for (;;)
 		;
 }
 
+void INTERRUPTSInit(void)
+{
+
+	GPIO_PORTF_IM_R &= 0;
+	// Configure PF4 for falling edge trigger
+	GPIO_PORTF_IS_R &= ~0x10;  // PF4 is edge-sensitive
+	GPIO_PORTF_IBE_R &= ~0x10; // PF4 is not both edges
+	GPIO_PORTF_IEV_R &= ~0x10; // PF4 falling edge event
+	GPIO_PORTF_ICR_R = 0x10;   // clear flag4
+	GPIO_PORTF_IM_R |= 0x10;   // arm interrupt on PF4
+
+	// Enable Interrrupts on PORTF
+	NVIC_EN0_R |= (1 << 30); // Enable interrupt 30 in NVIC (GPIOF)
+}
 void timer0Init(void)
 {
 	SYSCTL_RCGCTIMER_R |= 0x01;

@@ -22,26 +22,15 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\kolleya\spring 24\2-RTOS\project el sanady\Car-Window-Control\src\workspace.uvprojx
-Project File Date:  03/18/2024
+Project File Date:  05/09/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'D:\programs\Keil5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling freertos_evr.c...
-compiling list.c...
-compiling heap_1.c...
-compiling port.c...
 compiling main.c...
-compiling queue.c...
-compiling tasks.c...
 linking...
-.\Objects\workspace.axf: Error: L6218E: Undefined symbol xTimerCreate (referred from main.o).
-.\Objects\workspace.axf: Error: L6218E: Undefined symbol xTimerGenericCommand (referred from main.o).
-.\Objects\workspace.axf: Error: L6218E: Undefined symbol xTimerCreateTimerTask (referred from tasks.o).
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 3 error messages.
-".\Objects\workspace.axf" - 3 Error(s), 0 Warning(s).
+Program Size: Code=8144 RO-data=656 RW-data=8 ZI-data=5008  
+".\Objects\workspace.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -83,11 +72,11 @@ Package Vendor: Keil
 
    * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@10.5.1
       Include file:  Source/include/FreeRTOS.h
+      Include file:  Source/include/queue.h
       Include file:  Source/include/semphr.h
       Include file:  Source/include/task.h
       Source file:   Source/list.c
       Source file:   Source/queue.c
-      Include file:  Source/include/queue.h
       Source file:   Source/tasks.c
       Source file:   Source/portable/GCC/ARM_CM4F/port.c
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
@@ -96,11 +85,10 @@ Package Vendor: Keil
       Source file:   Source/portable/MemMang/heap_1.c
 
    * Component: Keil::Device:Startup@1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
       Include file:  Device/Include/TM4C123/TM4C123.h
       Source file:   Device/Source/system_TM4C123.c
-      Source file:   Device/Source/ARM/startup_TM4C123.s
-Target not created.
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

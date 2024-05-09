@@ -50,7 +50,7 @@ extern uint32_t SystemCoreClock;
 /* Constants that describe the hardware and memory usage. */
 #define configCPU_CLOCK_HZ                    (SystemCoreClock)
 #define configTICK_RATE_HZ                    ((TickType_t)1000)
-#define configTOTAL_HEAP_SIZE                 ((size_t)8192)
+#define configTOTAL_HEAP_SIZE                 ((size_t)4096)
 #define configMINIMAL_STACK_SIZE              ((uint16_t)256)
 #define configSUPPORT_DYNAMIC_ALLOCATION      1
 #define configSUPPORT_STATIC_ALLOCATION       0
@@ -64,7 +64,7 @@ extern uint32_t SystemCoreClock;
 #define configUSE_16_BIT_TICKS                0
 
 /* Software timer definitions. */
-#define configUSE_TIMERS                      1
+#define configUSE_TIMERS                      0
 #define configTIMER_TASK_PRIORITY             2
 #define configTIMER_QUEUE_LENGTH              5
 #define configTIMER_TASK_STACK_DEPTH          (configMINIMAL_STACK_SIZE * 2)
@@ -124,8 +124,8 @@ extern uint32_t SystemCoreClock;
 
 /* !!!! configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to zero !!!!
  * See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY          (configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS))
-
+//#define configMAX_SYSCALL_INTERRUPT_PRIORITY          (configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS))
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY 10
 /* Set the following definitions to 1 to include the API function, or zero
  * to exclude the API function.  NOTE:  Setting an INCLUDE_ parameter to 0 is
  * only necessary if the linker does not automatically remove functions that are
