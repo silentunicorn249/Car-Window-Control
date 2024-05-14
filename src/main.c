@@ -31,12 +31,12 @@ int Lock_Enabled(void)
 
 int UpLimitSwitchDetected(void)
 {
-	return !(GPIO_PORTA_DATA_R & 0x10); // Return 1 if button is pressed (active low)
+	return !(GPIO_PORTA_DATA_R & (1 << 5)); // Return 1 if button is pressed (active low)
 }
 
 int DownLimitSwitchDetected(void)
 {
-	return !(GPIO_PORTA_DATA_R & 0x20); // Return 1 if button is pressed (active low)
+	return !(GPIO_PORTA_DATA_R & (1 << 6)); // Return 1 if button is pressed (active low)
 }
 
 int JammingLimitSwitchDetected(void)
@@ -79,8 +79,8 @@ void MotorDriver()
 					lastDirection = 0;
 					GPIO_PORTF_DATA_R &= 0x08;
 					GPIO_PORTF_DATA_R &= ~0x03; // 0xfff 11
-					// GPIO_PORTF_DATA_R = 0;
-					// stop motion
+												// GPIO_PORTF_DATA_R = 0;
+												// stop motion
 				}
 				else if (lastDirection == -1 && rcvCommand == 1)
 				{
@@ -103,7 +103,6 @@ void MotorDriver()
 						GPIO_PORTF_DATA_R &= ~(1 << 2);
 					}
 
-
 					// automatic down
 					else if (rcvCommand == 3)
 					{
@@ -121,7 +120,8 @@ void PassengerLisnter(void *pvParameters)
 {
 	while (1)
 	{
-		if(lockEnabled){
+		if (lockEnabled)
+		{
 			taskYIELD();
 			continue;
 		}
@@ -134,18 +134,20 @@ void PassengerLisnter(void *pvParameters)
 
 			if (UpPressedPassenger())
 			{
+
 				// manual
+				int lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
 				while (UpPressedPassenger())
 				{
 					lastDirection = 1;
-					GPIO_PORTF_DATA_R = (1 << 1);
-					// vTaskDelay(pdMS_TO_TICKS(5)); // to go to other tasks
+					GPIO_PORTF_DATA_R =  (1 << 1) | (lockEnabled << 3);
 				}
 				lastDirection = 0;
-				GPIO_PORTF_DATA_R = 0;
+				GPIO_PORTF_DATA_R = (lockEnabled << 3);
 			}
 			else
 			{
+
 				// automatic
 				cntr = 1;
 				xQueueSend(xQueue, &cntr, 0);
@@ -161,17 +163,14 @@ void PassengerLisnter(void *pvParameters)
 			{
 
 				// manual
+				int lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
 				while (DownPressedPassenger())
 				{
-					GPIO_PORTF_DATA_R = (1 << 2);
+					GPIO_PORTF_DATA_R = (1 << 2) | (lockEnabled << 3);
 					lastDirection = -1;
-					// vTaskDelay(pdMS_TO_TICKS(5)); // to go to other tasks
 				}
 				lastDirection = 0;
-				GPIO_PORTF_DATA_R = 0;
-
-				// cntr = 2;
-				// xQueueSend(xQueue, &cntr, portMAX_DELAY);
+				GPIO_PORTF_DATA_R = (lockEnabled << 3);
 			}
 			else
 			{
@@ -181,8 +180,8 @@ void PassengerLisnter(void *pvParameters)
 			}
 			vTaskDelay(pdMS_TO_TICKS(500));
 		}
-		xSemaphoreGive(xMutex);
 
+		xSemaphoreGive(xMutex);
 		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
 	}
 }
@@ -202,13 +201,14 @@ void DriverListner(void *pvParameters)
 			{
 
 				// manual
+				int lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
 				while (UpPressedDriver())
 				{
 					lastDirection = 1;
-					GPIO_PORTF_DATA_R = (1 << 1);
+					GPIO_PORTF_DATA_R =  (1 << 1) | (lockEnabled << 3);
 				}
 				lastDirection = 0;
-				GPIO_PORTF_DATA_R = 0;
+				GPIO_PORTF_DATA_R = (lockEnabled << 3);
 			}
 			else
 			{
@@ -228,13 +228,14 @@ void DriverListner(void *pvParameters)
 			{
 
 				// manual
+				int lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
 				while (DownPressedDriver())
 				{
-					GPIO_PORTF_DATA_R = (1 << 2);
+					GPIO_PORTF_DATA_R = (1 << 2) | (lockEnabled << 3);
 					lastDirection = -1;
 				}
 				lastDirection = 0;
-				GPIO_PORTF_DATA_R = 0;
+				GPIO_PORTF_DATA_R = (lockEnabled << 3);
 			}
 			else
 			{
@@ -247,33 +248,6 @@ void DriverListner(void *pvParameters)
 
 		xSemaphoreGive(xMutex);
 		vTaskDelay(pdMS_TO_TICKS(50)); // Check button every 50ms
-	}
-}
-
-void LimitSwitchListner()
-{
-	while (1)
-	{
-		int cntr = 0;
-		int upState = UpLimitSwitchDetected();
-		int downState = DownLimitSwitchDetected();
-		int objectDetected = JammingLimitSwitchDetected();
-		if (upState && lastDirection == 1)
-		{
-			windowActive = 0;
-		}
-		else
-		{
-			windowActive = 1;
-		}
-		if (downState && lastDirection == -1)
-		{
-			windowActive = 0;
-		}
-		else
-		{
-			windowActive = 1;
-		}
 	}
 }
 
@@ -311,13 +285,7 @@ void Init()
 {
 	psh_btn_init();
 	PORTF_Interrupt_Enable();
-}
-
-// Timer callback function
-void timerCallback(TimerHandle_t xTimer)
-{
-	// Timer expired, perform actions here
-	GPIO_PORTF_DATA_R ^= 0x02;
+	PORTA_Interrupt_Enable();
 }
 
 void GPIOF_Handler(void)
@@ -358,12 +326,37 @@ void GPIOF_Handler(void)
 	}
 }
 
+void GPIOA_Handler(void)
+{
+	lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
+
+	int upDetected = !(GPIO_PORTA_DATA_R & (1 << 5));
+	int downDetected = !(GPIO_PORTA_DATA_R & (1 << 6));
+	if (lastDirection == -1 && upDetected)
+	{
+		// GPIO_PORTF_DATA_R = (1 << 2);
+		windowDownActive = 0;
+		lastDirection = 0;
+		GPIO_PORTF_DATA_R = 0;
+		GPIO_PORTF_DATA_R = (lockEnabled << 3);
+	}
+	else if (lastDirection == 1 && downDetected)
+	{
+		// GPIO_PORTF_DATA_R = (1 << 1);
+		windowUpActive = 0;
+		lastDirection = 0;
+		GPIO_PORTF_DATA_R = 0;
+		GPIO_PORTF_DATA_R = (lockEnabled << 3);
+	}
+	GPIO_PORTA_ICR_R |= (1 << 5) | (1 << 6);
+}
+
 int main()
 {
 	Init();
 
 	vSemaphoreCreateBinary(xLockSemaphore);
-    xMutex = xSemaphoreCreateMutex();
+	xMutex = xSemaphoreCreateMutex();
 	xQueue = xQueueCreate(10, sizeof(uint32_t));
 	__asm("CPSIE i");
 	if (xLockSemaphore != NULL)
@@ -400,15 +393,14 @@ void PORTF_Interrupt_Enable(void)
 void PORTA_Interrupt_Enable(void)
 {
 
-	GPIO_PORTF_IM_R &= 0;
+	GPIO_PORTA_IM_R &= 0;
 	// Configure PF4 for falling edge trigger
-	GPIO_PORTF_IS_R &= ~0x11;  // PF4 is edge-sensitive and PF0
-	GPIO_PORTF_IBE_R &= ~0x11; // PF4 is not both edges and PF0
-	GPIO_PORTA_IBE_R |= 0x01;  // Enable both edges interrupt for PF0
-	GPIO_PORTF_IEV_R &= ~0x11; // PF4 falling edge event and PF0
-	GPIO_PORTF_ICR_R = 0x11;   // clear flag4 and PF0
-	GPIO_PORTF_IM_R |= 0x11;   // arm interrupt on PF4 and PF0
+	GPIO_PORTA_IS_R &= ~((1 << 5) | (1 << 6));	// PF4 is edge-sensitive and PF0
+	GPIO_PORTA_IBE_R |= (1 << 5) | (1 << 6);	// Enable both edges interrupt for PF0
+	GPIO_PORTA_IEV_R &= ~((1 << 5) | (1 << 6)); // PF4 falling edge event and PF0
+	GPIO_PORTA_ICR_R = (1 << 5) | (1 << 6);		// clear flag4 and PF0
+	GPIO_PORTA_IM_R |= (1 << 5) | (1 << 6);		// arm interrupt on PF4 and PF0
 
 	// Enable Interrrupts on PORTF
-	NVIC_EN0_R |= (1 << 30); // Enable interrupt 30 in NVIC (GPIOF)
+	NVIC_EN0_R |= (1 << 0); // Enable interrupt 1 in NVIC (GPIOA)
 }
