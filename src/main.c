@@ -344,13 +344,15 @@ void GPIOF_Handler(void)
 		if (lastDirection == 1 && JammingLimitSwitchDetected())
 		{
 			lastDirection = -1;
-			GPIO_PORTF_DATA_R = (1 << 2);
+			lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
+			GPIO_PORTF_DATA_R = (1 << 2) | (lockEnabled << 3);
 
 			for (volatile uint32_t i = 0; i < 6000000; i++)
 			{
 				__asm("NOP");
 			}
 			GPIO_PORTF_DATA_R = 0x0;
+			GPIO_PORTF_DATA_R = (lockEnabled << 3);
 			lastDirection = 0;
 		}
 	}
