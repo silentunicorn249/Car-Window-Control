@@ -1216,9 +1216,9 @@ Image Symbol Table
     __arm_cp.13_1                            0x00000ae0   Number         4  main.o(.text.PORTF_Interrupt_Enable)
     __arm_cp.13_2                            0x00000ae4   Number         4  main.o(.text.PORTF_Interrupt_Enable)
     [Anonymous Symbol]                       0x00000ae8   Section        0  main.o(.text.PassengerLisnter)
-    __arm_cp.9_0                             0x00000b98   Number         4  main.o(.text.PassengerLisnter)
-    __arm_cp.9_1                             0x00000b9c   Number         4  main.o(.text.PassengerLisnter)
-    __arm_cp.9_2                             0x00000ba0   Number         4  main.o(.text.PassengerLisnter)
+    __arm_cp.9_0                             0x00000ba0   Number         4  main.o(.text.PassengerLisnter)
+    __arm_cp.9_1                             0x00000ba4   Number         4  main.o(.text.PassengerLisnter)
+    __arm_cp.9_2                             0x00000ba8   Number         4  main.o(.text.PassengerLisnter)
     [Anonymous Symbol]                       0x00000bb0   Section        0  port.o(.text.PendSV_Handler)
     pxCurrentTCBConst                        0x00000c10   Number         0  port.o(.text.PendSV_Handler)
     [Anonymous Symbol]                       0x00000c20   Section        0  port.o(.text.SVC_Handler)
@@ -1636,7 +1636,7 @@ Image Symbol Table
     MotorDriver                              0x000008f1   Thumb Code   136  main.o(.text.MotorDriver)
     PORTA_Interrupt_Enable                   0x00000a5d   Thumb Code    56  main.o(.text.PORTA_Interrupt_Enable)
     PORTF_Interrupt_Enable                   0x00000a99   Thumb Code    68  main.o(.text.PORTF_Interrupt_Enable)
-    PassengerLisnter                         0x00000ae9   Thumb Code   176  main.o(.text.PassengerLisnter)
+    PassengerLisnter                         0x00000ae9   Thumb Code   184  main.o(.text.PassengerLisnter)
     PendSV_Handler                           0x00000bb1   Thumb Code   100  port.o(.text.PendSV_Handler)
     SVC_Handler                              0x00000c21   Thumb Code    36  port.o(.text.SVC_Handler)
     SysTick_Handler                          0x00000c45   Thumb Code    40  port.o(.text.SysTick_Handler)
@@ -1812,8 +1812,8 @@ Memory Map of the image
     0x00000a5a   0x00000a5a   0x00000002   PAD
     0x00000a5c   0x00000a5c   0x0000003c   Code   RO           30    .text.PORTA_Interrupt_Enable  main.o
     0x00000a98   0x00000a98   0x00000050   Code   RO           28    .text.PORTF_Interrupt_Enable  main.o
-    0x00000ae8   0x00000ae8   0x000000bc   Code   RO           20    .text.PassengerLisnter  main.o
-    0x00000ba4   0x00000ba4   0x0000000c   PAD
+    0x00000ae8   0x00000ae8   0x000000c4   Code   RO           20    .text.PassengerLisnter  main.o
+    0x00000bac   0x00000bac   0x00000004   PAD
     0x00000bb0   0x00000bb0   0x00000064   Code   RO          141    .text.PendSV_Handler  port.o
     0x00000c14   0x00000c14   0x0000000c   PAD
     0x00000c20   0x00000c20   0x00000024   Code   RO          125    .text.SVC_Handler   port.o
@@ -1922,7 +1922,7 @@ Image component sizes
        240         42          0          0          0       2666   dio.o
        110          8          0          0       4104       1886   heap_1.o
        108          0          0          0          0       2383   list.o
-      1196         88          7          3         24       5122   main.o
+      1204         88          7          3         24       5100   main.o
        940         68          0          4         20       5312   port.o
       1850          8          0          0          0      21562   queue.o
        276         24        620          0        512       5500   startup_tm4c123.o
@@ -1930,9 +1930,9 @@ Image component sizes
       2830        112          4          0        260      35121   tasks.o
 
     ----------------------------------------------------------------------
-      7684        402        666         16       4920      86052   Object Totals
+      7684        394        666         16       4920      86030   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        38         24          3          5          0          0   (incl. Padding)
+        30         16          3          5          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1986,9 +1986,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8438        418        666         16       5016      86628   Grand Totals
-      8438        418        666         16       5016      86628   ELF Image Totals
-      8438        418        666         16          0          0   ROM Totals
+      8438        410        666         16       5016      86606   Grand Totals
+      8438        410        666         16       5016      86606   ELF Image Totals
+      8438        410        666         16          0          0   ROM Totals
 
 ==============================================================================
 

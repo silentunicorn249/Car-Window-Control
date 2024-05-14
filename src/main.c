@@ -163,14 +163,13 @@ void PassengerLisnter(void *pvParameters)
 			{
 
 				// manual
-				int lockEnabled = !(GPIO_PORTF_DATA_R & 0x01);
 				while (DownPressedPassenger())
 				{
-					GPIO_PORTF_DATA_R = (1 << 2) | (lockEnabled << 3);
+					GPIO_PORTF_DATA_R = (1 << 2);
 					lastDirection = -1;
 				}
 				lastDirection = 0;
-				GPIO_PORTF_DATA_R = (lockEnabled << 3);
+				GPIO_PORTF_DATA_R = 0;
 			}
 			else
 			{
