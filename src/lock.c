@@ -29,7 +29,7 @@ int Button_Pressed2(void)
 {
 	return !(GPIO_PORTF_DATA_R & 0x10); // Return 1 if button is pressed (active low)
 }
-int Button_Pressed(void)
+int Lock_Enabled(void)
 {
 	return !(GPIO_PORTF_DATA_R & 0x01); // Return 1 if button is pressed (active low)
 }
@@ -41,7 +41,7 @@ static void lock(void* pvParameters) {
         xSemaphoreTake(xLockSemaphore, portMAX_DELAY);
 			
 			//Check on Button State
-				if (Button_Pressed()){
+				if (Lock_Enabled()){
 					GPIO_PORTF_DATA_R |= (1<<3); 				// Turn RED LED ON for indication
 					vTaskDelay(pdMS_TO_TICKS(500));
 				}
@@ -114,12 +114,12 @@ void PassengerListner(void *pvParameters)
 	while (1)
 	{
 		int cntr = 0;
-		if (Button_Pressed())
+		if (Lock_Enabled())
 		{
 
 			vTaskDelay(pdMS_TO_TICKS(500));
 
-			if (Button_Pressed())
+			if (Lock_Enabled())
 			{
 				// Turn on one LED, turn off the other
 				cntr = 1;
@@ -149,12 +149,12 @@ void DriverListner(void *pvParameters)
 	while (1)
 	{
 		int cntr = 0;
-		if (Button_Pressed())
+		if (Lock_Enabled())
 		{
 
 			timer0_Delay(5000);
 
-			if (Button_Pressed())
+			if (Lock_Enabled())
 			{
 				// Turn on one LED, turn off the other
 				cntr = 1;
@@ -236,7 +236,7 @@ void timerCallback(TimerHandle_t xTimer)
 	// Timer expired, perform actions here
 	GPIO_PORTF_DATA_R ^= 0x02;
 }
-void INTERRUPTSInit(void);
+void PORTF_Interrupt_Enable(void);
 
 
 void GPIOF_Handler(void)
@@ -263,7 +263,7 @@ int main()
 	DIO_DIR(PORTF,3,OUTPUT);
 	DIO_DIR(PORTF,PIN4,INPUT);
 	DIO_DIR(PORTF,PIN0,INPUT);
-	INTERRUPTSInit();
+	PORTF_Interrupt_Enable();
 	vSemaphoreCreateBinary(xLockSemaphore);
 	xQueue = xQueueCreate(10, sizeof(uint32_t));
 __asm("CPSIE i");
@@ -285,7 +285,7 @@ xTaskCreate( lock, "lock", 200, NULL, 4, NULL );
 
 
 
-void INTERRUPTSInit(void)
+void PORTF_Interrupt_Enable(void)
 {
 
 	
